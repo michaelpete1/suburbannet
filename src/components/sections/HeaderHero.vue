@@ -48,7 +48,7 @@
                 <div class="absolute -top-6 -right-24 flex flex-col items-end gap-3 w-[220px]">
                   <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-5 py-2 text-[12px] font-medium text-gray-700 border border-white/60">
                     <span class="inline-block h-2.5 w-2.5 rounded-full bg-blue-500"></span>
-                    Shipping request
+                    Fiber request
                   </div>
                 </div>
 
@@ -68,7 +68,7 @@
                       <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.22em]">Installation Update</p>
                       <div class="flex items-center justify-between mt-1.5">
                         <span class="text-sm font-semibold text-gray-900">In progress</span>
-                        <span class="text-xs font-semibold text-gray-500">{{ installationProgress }}%</span>
+                        <span class="text-xs font-semibold text-gray-500">{{ installationProgress }}80%</span>
                       </div>
                     </div>
                   </div>
@@ -97,8 +97,7 @@
                   </div>
                   <div class="flex flex-col leading-tight">
                     <span class="text-[10px] font-semibold tracking-[0.32em] text-white/80 uppercase">Speed</span>
-                    <span class="text-lg font-black text-white mt-0.5">150</span>
-                    <span class="text-[13px] font-semibold text-white/85 -mt-0.5">Mbps</span>
+                    <span class="text-lg font-black text-white mt-0.5">10 Gbps</span>
                   </div>
                 </div>
 
@@ -106,8 +105,8 @@
                   <div class="flex items-start gap-4">
                     <div class="h-10 w-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold shadow-md">SF</div>
                     <div class="flex-1">
-                      <p class="text-base font-semibold text-gray-900 leading-tight">Assigned to Lea Garcia</p>
-                      <p class="text-sm text-gray-500 mt-0.5">Customer Success</p>
+                      <p class="text-base font-semibold text-gray-900 leading-tight">Assigned to John Ayo</p>
+                      <p class="text-sm text-gray-500 mt-0.5">Project Manager</p>
                     </div>
                   </div>
                 </div>

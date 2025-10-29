@@ -1,13 +1,9 @@
 <script setup>
 const partners = [
-  { name: 'Slack', tag: 'Productivity', logo: 'https://cdn.simpleicons.org/slack/FFFFFF' },
-  { name: 'HubSpot', tag: 'CRM', logo: 'https://cdn.simpleicons.org/hubspot/FFFFFF' },
-  { name: 'Microsoft Teams', tag: 'Productivity', logo: 'https://cdn.simpleicons.org/microsoftteams/FFFFFF' },
-  { name: 'Salesforce', tag: 'CRM', logo: 'https://cdn.simpleicons.org/salesforce/FFFFFF' },
-  { name: 'Monday.com', tag: 'CRM', logo: 'https://cdn.simpleicons.org/mondaydotcom/FFFFFF' },
-  { name: 'Intercom', tag: 'Help Desk - LiveChat', logo: 'https://cdn.simpleicons.org/intercom/FFFFFF' },
-  { name: 'Gorgias', tag: 'eCommerce', logo: 'https://cdn.simpleicons.org/gorgias/FFFFFF' },
-  { name: 'Freshdesk', tag: 'Help Desk', logo: 'https://cdn.simpleicons.org/freshdesk/FFFFFF' },
+  { name: 'Cisco', tag: 'Network Infrastructure', logo: '/logos/cisco.png' },
+  { name: 'TP-Link', tag: 'Connectivity Hardware', logo: '/logos/tplink.png' },
+  { name: 'Huawei', tag: 'Enterprise Solutions', logo: '/logos/hauwei.png' },
+  { name: 'Microsoft', tag: 'Cloud & Productivity', logo: '/logos/microsoft.png' },
 ]
 </script>
 
@@ -25,17 +21,32 @@ const partners = [
           v-for="p in partners"
           :key="p.name"
           href="#"
-          class="p-6 rounded-xl text-left transition-all duration-300 border border-gray-700 hover:border-red-600 hover:-translate-y-0.5 hover:shadow-lg/20 flex flex-col justify-between"
+          class="p-6 rounded-xl transition-all duration-300 border border-gray-700 hover:border-red-600 hover:-translate-y-0.5 hover:shadow-lg/20 flex flex-col items-center text-center"
           style="background-color: rgba(255, 255, 255, 0.05);"
         >
-          <div class="flex items-center space-x-3 mb-8">
-            <img :src="p.logo" :alt="p.name" class="h-8 w-8"/>
-            <span class="text-lg font-bold">{{ p.name }}</span>
+          <div class="flex items-center justify-center w-full h-12 mb-6">
+            <img :src="p.logo" :alt="p.name" class="partner-logo" />
           </div>
+          <span class="text-lg font-bold mb-2">{{ p.name }}</span>
           <p class="text-sm text-gray-400">{{ p.tag }}</p>
         </a>
       </div>
-      <button class="mt-16 bg-red-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-red-700 transition">See all integrations</button>
+      <button class="mt-16 bg-red-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-red-700 transition">Partner with us</button>
     </div>
   </div>
 </template>
+
+<style scoped>
+.partner-logo {
+  max-height: 2.5rem;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+}
+
+a:hover .partner-logo {
+  opacity: 1;
+}
+</style>

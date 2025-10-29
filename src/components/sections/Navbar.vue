@@ -1,16 +1,18 @@
 <template>
   <div ref="rootEl" class="navbar font-sans" role="navigation" aria-label="Main">
     <div class="hidden lg:flex justify-end items-center gap-6 px-6 lg:px-12 py-2 bg-red-600 text-sm text-white">
-      <a href="#" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Suburban Cloud <span class="text-white/80 text-[10px]">▼</span></a>
-      <a href="#" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Suburban Academy <span class="text-white/80 text-[10px]">▼</span></a>
-      <a href="#" class="opacity-95 hover:opacity-100">About us</a>
-      <span class="font-semibold border-l border-white/40 pl-4">+234 908 7005 784</span>
+      <a href="https://suburbanacademy.ng" target="_blank" rel="noopener" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Suburban Academy</a>
+      <a href="https://techosphere.ng/" target="_blank" rel="noopener" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Techosphere</a>
+      <span class="font-semibold border-l border-white/40 pl-4">0708000044</span>
       <a href="#" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">EN <span class="text-white/80 text-[10px]">▼</span></a>
     </div>
 
     <nav class="flex justify-between items-center px-5 lg:px-12 py-2 lg:py-4 border-b lg:border-gray-100 border-transparent bg-red-600 lg:bg-white sticky top-0 z-50">
       <div class="flex items-center gap-4 lg:gap-8">
-        <img :src="brandSrc" @error="onBrandError" alt="Suburban Logo" class="hidden lg:block h-7 w-auto lg:h-9" />
+        <RouterLink to="/" class="inline-flex items-center">
+          <img :src="brandSrc" @error="onBrandError" alt="Suburban Logo" class="lg:hidden h-8 w-auto" />
+          <img :src="brandSrc" @error="onBrandError" alt="Suburban Logo" class="hidden lg:block h-7 w-auto lg:h-9" />
+        </RouterLink>
         <div class="hidden lg:flex items-center gap-8 text-gray-800 relative">
           <button @click="toggleMenu('why')" :aria-expanded="openMenu==='why'" aria-haspopup="menu" aria-controls="menu-why" class="hover:text-red-600 font-medium inline-flex items-center gap-1">
             Why Suburban <span class="text-gray-400 text-[10px]">▼</span>
@@ -18,29 +20,31 @@
           <button @click="toggleMenu('services')" :aria-expanded="openMenu==='services'" aria-haspopup="menu" aria-controls="menu-services" class="hover:text-red-600 font-medium inline-flex items-center gap-1">
             Services <span class="text-gray-400 text-[10px]">▼</span>
           </button>
-          <a href="#request-form" class="hover:text-red-600 font-medium">Get Fiber</a>
+          <RouterLink :to="{ path: '/', hash: '#request-form' }" class="hover:text-red-600 font-medium" @click="closeAll">Get Fiber</RouterLink>
 
           <Transition enter-active-class="transition transform duration-150 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition transform duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
-            <div v-if="openMenu==='why'" id="menu-why" role="menu" class="absolute top-full left-0 mt-3 w-56 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
-              <a href="#features" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Why Suburban</a>
-              <a href="#commitment" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Our Commitment</a>
-              <a href="#testimonials" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Testimonials</a>
+            <div v-if="openMenu==='why'" id="menu-why" role="menu" class="absolute top-full left-0 mt-3 w-60 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
+              <RouterLink :to="{ path: '/', hash: '#features' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" @click="closeAll">Why Suburban</RouterLink>
+              <RouterLink :to="{ path: '/', hash: '#commitment' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" @click="closeAll">Our Commitment</RouterLink>
+              <RouterLink :to="{ path: '/', hash: '#testimonials' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" @click="closeAll">Testimonials</RouterLink>
+              <RouterLink to="/about" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 border-t border-gray-100" @click="closeAll">About Us</RouterLink>
             </div>
           </Transition>
           <Transition enter-active-class="transition transform duration-150 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition transform duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
-            <div v-if="openMenu==='services'" id="menu-services" role="menu" class="absolute top-full left-40 mt-3 w-56 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
-              <a href="#request-form" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Business Internet</a>
-              <a href="#features" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Managed Services</a>
-              <a href="#partners" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">Cloud & Integrations</a>
+            <div v-if="openMenu==='services'" id="menu-services" role="menu" class="absolute top-full left-40 mt-3 w-60 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
+              <RouterLink to="/business-internet" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Business Internet</RouterLink>
+              <RouterLink to="/managed-services" role="menuitem" class="block px-4 py-3 text-sm font-semibold text-white bg-[#D50036] hover:bg-[#B0002B] transition-colors" @click="closeAll">Managed Services</RouterLink>
+              <RouterLink :to="{ path: '/managed-services', hash: '#infrastructure' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Infrastructure</RouterLink>
+              <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Partners Program</RouterLink>
             </div>
           </Transition>
         </div>
       </div>
 
       <div class="flex items-center space-x-3 lg:space-x-5">
-        <button class="hidden lg:inline-flex items-center px-5 py-2 rounded-full font-semibold text-red-600 bg-rose-50 hover:bg-rose-100 transition shadow-sm">
-          Book a demo
-        </button>
+        <a href="https://suburbancloud.ng" target="_blank" rel="noopener" class="hidden lg:inline-flex items-center px-5 py-2 rounded-full font-semibold text-red-600 bg-rose-50 hover:bg-rose-100 transition shadow-sm">
+          Suburban Cloud
+        </a>
         <a href="#request-form" class="hidden lg:inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition shadow-sm">
           Request for Fiber Service
         </a>
@@ -51,17 +55,15 @@
     <Transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
       <div v-if="mobileOpen" ref="mobilePanelEl" tabindex="-1" class="lg:hidden bg-red-600 text-white px-6 py-5 space-y-5" role="dialog" aria-label="Mobile menu">
         <div class="space-y-2 border-b border-white/10 pb-4">
-          <a href="#" class="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-white/10">
-            <span class="font-medium">Suburban Cloud</span>
-            <span class="text-white/80 text-xs">▼</span>
+          <a href="https://suburbancloud.ng" target="_blank" rel="noopener" class="flex items-center px-2 py-2 rounded-lg hover:bg-white/10 font-medium">
+            Suburban Cloud
           </a>
-          <a href="#" class="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-white/10">
-            <span class="font-medium">Suburban Academy</span>
-            <span class="text-white/80 text-xs">▼</span>
+          <a href="https://suburbanacademy.ng" target="_blank" rel="noopener" class="flex items-center px-2 py-2 rounded-lg hover:bg-white/10 font-medium">
+            Suburban Academy
           </a>
-          <a href="#" class="block px-2 py-2 rounded-lg hover:bg-white/10 font-medium">About us</a>
+          <a href="https://techosphere.ng/" target="_blank" rel="noopener" class="block px-2 py-2 rounded-lg hover:bg-white/10 font-medium" @click="closeAll">Techosphere</a>
           <div class="flex items-center justify-between pt-3 border-t border-white/10 mt-2 px-2 text-sm">
-            <span class="font-semibold">+234 908 7005 784</span>
+            <span class="font-semibold">0708000044</span>
             <a href="#" class="inline-flex items-center gap-1 text-white/80 hover:text-white">
               EN <span class="text-[10px]">▼</span>
             </a>
@@ -74,9 +76,11 @@
             <span class="text-white/80 text-xs">{{ mobileSection==='why' ? '▲' : '▼' }}</span>
           </button>
           <div v-if="mobileSection==='why'" class="pl-4 space-y-1">
-            <a href="#features" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Why Suburban</a>
-            <a href="#commitment" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Our Commitment</a>
-            <a href="#testimonials" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Testimonials</a>
+            <RouterLink :to="{ path: '/', hash: '#features' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Why Suburban</RouterLink>
+            <RouterLink :to="{ path: '/', hash: '#commitment' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Our Commitment</RouterLink>
+            <RouterLink :to="{ path: '/', hash: '#testimonials' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Testimonials</RouterLink>
+            <RouterLink to="/about" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">About Us</RouterLink>
+            <a href="https://techosphere.ng/" target="_blank" rel="noopener" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Techosphere</a>
           </div>
 
           <button @click="toggleMobileSection('services')" class="w-full flex items-center justify-between px-2 py-3 rounded-lg hover:bg-white/10">
@@ -84,21 +88,22 @@
             <span class="text-white/80 text-xs">{{ mobileSection==='services' ? '▲' : '▼' }}</span>
           </button>
           <div v-if="mobileSection==='services'" class="pl-4 space-y-1">
-            <a href="#request-form" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Business Internet</a>
-            <a href="#features" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Managed Services</a>
-            <a href="#partners" class="block px-2 py-2 text-sm rounded hover:bg-white/10">Cloud & Integrations</a>
+            <RouterLink to="/business-internet" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Business Internet</RouterLink>
+            <RouterLink to="/managed-services" class="block px-2 py-2 text-sm rounded bg-[#D50036] text-white hover:bg-[#B0002B]" @click="closeAll">Managed Services</RouterLink>
+            <RouterLink :to="{ path: '/managed-services', hash: '#infrastructure' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Infrastructure</RouterLink>
+            <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Partners Program</RouterLink>
           </div>
 
-          <a href="#request-form" class="block px-2 py-3 font-medium rounded-lg hover:bg-white/10">Get Fiber</a>
+          <RouterLink :to="{ path: '/', hash: '#request-form' }" class="block px-2 py-3 font-medium rounded-lg hover:bg-white/10" @click="closeAll">Get Fiber</RouterLink>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3 pt-1">
-          <button class="w-full sm:flex-1 inline-flex items-center justify-center px-5 py-3 rounded-full font-semibold text-red-600 bg-white hover:bg-white/90 transition">
-            Book a demo
-          </button>
-          <a href="#request-form" class="w-full sm:flex-1 inline-flex items-center justify-center bg-white text-red-600 hover:bg-white/90 px-5 py-3 rounded-full font-semibold transition">
-            Request for Fiber Service
+          <a href="https://suburbancloud.ng" target="_blank" rel="noopener" class="w-full sm:flex-1 inline-flex items-center justify-center px-5 py-3 rounded-full font-semibold text-red-600 bg-white hover:bg-white/90 transition">
+            Suburban Cloud
           </a>
+          <RouterLink :to="{ path: '/', hash: '#request-form' }" class="w-full sm:flex-1 inline-flex items-center justify-center bg-white text-red-600 hover:bg-white/90 px-5 py-3 rounded-full font-semibold transition" @click="closeAll">
+            Request for Fiber Service
+          </RouterLink>
         </div>
       </div>
     </Transition>

@@ -1,11 +1,3 @@
-<script setup>
-import Home from './Home.vue'
-</script>
-
 <template>
-  <Home />
-  
+  <RouterView />
 </template>
-
-<style scoped>
-</style>

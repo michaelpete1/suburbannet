@@ -13,45 +13,47 @@
         </div>
 
         <form @submit.prevent="submitStep1" class="space-y-6">
-          <div class="space-y-4">
+          <div class="space-y-3">
             <div>
-              <label for="work-email" class="block text-sm font-medium text-gray-700 sr-only">Work Email</label>
+              <label for="work-email" class="block text-sm font-semibold text-gray-700 mb-2">Work Email</label>
               <input type="email" id="work-email" v-model="formData.email" placeholder="Work email (required)" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="Work email" />
-              </div>
+            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label for="first-name" class="block text-sm font-medium text-gray-700 sr-only">First Name</label>
+                <label for="first-name" class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
                 <input type="text" id="first-name" v-model="formData.firstName" placeholder="First Name (required)" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="First Name" />
               </div>
               <div>
-                <label for="last-name" class="block text-sm font-medium text-gray-700 sr-only">Last Name</label>
+                <label for="last-name" class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
                 <input type="text" id="last-name" v-model="formData.lastName" placeholder="Last Name (required)" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="Last Name" />
               </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-200 hover:border-red-500">
-                <label for="country-code" class="sr-only">Country Code</label>
-                <select id="country-code" class="p-4 border-r border-gray-300 rounded-l-xl bg-gray-50 appearance-none transition-colors duration-200 ease-out hover:border-red-500 focus:border-red-500 focus:outline-none text-gray-700">
-                  <option value="+234">🇳🇬 +234</option>
-                  <option value="+1">🇺🇸 +1</option>
-                  <option value="+44">🇬🇧 +44</option>
-                </select>
-                <label for="phone-number" class="sr-only">Phone Number</label>
-                <input type="tel" id="phone-number" v-model="formData.phoneNumber" placeholder="Phone number (required)" class="flex-grow p-4 bg-white rounded-r-xl transition-colors duration-200 ease-out focus:outline-none focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="Phone number" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="phone-number" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                <div class="flex border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-200 hover:border-red-500">
+                  <label for="country-code" class="sr-only">Country Code</label>
+                  <select id="country-code" class="p-4 border-r border-gray-300 rounded-l-xl bg-gray-50 appearance-none transition-colors duration-200 ease-out hover:border-red-500 focus:border-red-500 focus:outline-none text-gray-700">
+                    <option value="+234">🇳🇬 +234</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                  </select>
+                  <input type="tel" id="phone-number" v-model="formData.phoneNumber" placeholder="Phone number (required)" class="flex-grow p-4 bg-white rounded-r-xl transition-colors duration-200 ease-out focus:outline-none focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="Phone number" />
+                </div>
               </div>
               <div>
-                <label for="organization" class="block text-sm font-medium text-gray-700 sr-only">Company/Organization Name</label>
+                <label for="organization" class="block text-sm font-semibold text-gray-700 mb-2">Company/Organization Name</label>
                 <input type="text" id="organization" v-model="formData.organization" placeholder="Company/Organization name" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 placeholder-gray-500" aria-label="Company or Organization name" />
               </div>
             </div>
           </div>
 
-          <div class="space-y-4 pt-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-2 pt-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label for="sector" class="block text-sm font-medium text-gray-700 sr-only">Sector</label>
+                <label for="sector" class="block text-sm font-semibold text-gray-700 mb-2">Sector</label>
                 <select id="sector" v-model="formData.sector" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 text-gray-700 aria-label:text-gray-500" :class="{ 'text-gray-500': !formData.sector }">
                   <option disabled value="">Choose a Sector (required)</option>
                   <option>Technology</option>
@@ -68,7 +70,7 @@
                 </select>
               </div>
               <div>
-                <label for="segment" class="block text-sm font-medium text-gray-700 sr-only">Segment</label>
+                <label for="segment" class="block text-sm font-semibold text-gray-700 mb-2">Segment</label>
                 <select id="segment" v-model="formData.segment" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 text-gray-700" :class="{ 'text-gray-500': !formData.segment }">
                   <option disabled value="">Select Segment (required)</option>
                   <option>Bank</option>
@@ -82,12 +84,12 @@
             </div>
 
             <div>
-              <label for="location" class="block text-sm font-medium text-gray-700 sr-only">Address/Service Location</label>
+              <label for="location" class="block text-sm font-semibold text-gray-700 mb-2">Address/Service Location</label>
               <input type="text" id="location" v-model="formData.location" placeholder="Address/Service Location (required)" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 placeholder-gray-500" required aria-label="Address or Service Location" />
             </div>
 
             <div>
-              <label for="product" class="block text-sm font-medium text-gray-700 sr-only">Choose a Product</label>
+              <label for="product" class="block text-sm font-semibold text-gray-700 mb-2">Choose a Product</label>
               <select id="product" v-model="formData.product" class="w-full p-4 border border-gray-300 rounded-xl transition-colors duration-200 ease-out focus:ring-2 focus:ring-red-500 focus:border-red-500 hover:border-red-500 text-gray-700" :class="{ 'text-gray-500': !formData.product }">
                 <option disabled value="">Choose a Product (required)</option>
                 <option>Business Internet</option>
@@ -135,66 +137,64 @@
       </div>
 
       <div
-        class="lg:col-span-5 relative overflow-hidden rounded-2xl h-full min-h-[500px] bg-cover bg-center hidden lg:block"
+        class="lg:col-span-5 relative overflow-hidden rounded-2xl bg-cover bg-center hidden lg:block lg:mt-10 min-h-[520px]"
         style="background-image: url('/logos/BG Frame.png');"
       >
-        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute inset-0 bg-black/30 animate-fade"></div>
         <div
           class="absolute inset-0 flex flex-col items-center justify-end gap-8 p-8 text-white"
           @mouseenter="pauseCarousel"
           @mouseleave="resumeCarousel"
         >
-          <div class="w-full max-w-[360px] flex-grow flex items-end justify-center">
-            <Transition name="fade" mode="out-in">
+          <div class="w-full max-w-[440px] flex-grow flex items-end justify-center">
+            <Transition name="soft-fade" mode="out-in">
               <picture :key="currentSlide.id + '-image'">
                 <source :srcset="currentSlide.image.desktop" media="(min-width: 1024px)" />
                 <img
                   :src="currentSlide.image.mobile"
                   :alt="currentSlide.image.alt"
-                  class="w-full h-auto max-h-[360px] rounded-3xl border border-white/40 shadow-2xl shadow-black/30 object-contain bg-white/10"
+                  class="w-full h-auto max-h-[420px] rounded-3xl border border-white/40 shadow-2xl shadow-black/30 object-contain bg-white/10"
                   loading="lazy"
                 />
               </picture>
             </Transition>
           </div>
 
-          <div class="w-full max-w-[420px]">
-            <Transition name="slide-up" mode="out-in">
-              <div
-                :key="currentSlide.id + '-sponsors'"
-                class="relative overflow-hidden rounded-3xl bg-white border border-white/60 shadow-lg"
-              >
-                <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-                <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
-                <div class="px-8 py-4">
-                  <div class="relative overflow-hidden">
-                    <div class="sponsor-marquee" :style="{ '--gap': '2.5rem' }">
-                      <div class="sponsor-track" :key="currentSlide.id + '-track-1'">
-                        <img
-                          v-for="sponsor in currentSlide.sponsors"
-                          :key="currentSlide.id + '-track-1-' + sponsor.alt"
-                          :src="sponsor.src"
-                          :alt="sponsor.alt"
-                          class="h-8 w-auto opacity-90 hover:opacity-100 transition"
-                        />
-                      </div>
-                      <div class="sponsor-track" :key="currentSlide.id + '-track-2'">
-                        <img
-                          v-for="sponsor in currentSlide.sponsors"
-                          :key="currentSlide.id + '-track-2-' + sponsor.alt"
-                          :src="sponsor.src"
-                          :alt="sponsor.alt"
-                          class="h-8 w-auto opacity-90 hover:opacity-100 transition"
-                        />
-                      </div>
+          <div class="w-[calc(100%+4rem)] -mx-8">
+            <div
+              :key="currentSlide.id + '-sponsors'"
+              class="relative overflow-hidden rounded-none bg-white border border-white/60 shadow-lg"
+            >
+              <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+              <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+              <div class="px-8 py-4">
+                <div class="relative overflow-hidden">
+                  <div class="sponsor-marquee" :style="{ '--gap': '2.5rem' }">
+                    <div class="sponsor-track" :key="currentSlide.id + '-track-1'">
+                      <img
+                        v-for="sponsor in currentSlide.sponsors"
+                        :key="currentSlide.id + '-track-1-' + sponsor.alt"
+                        :src="sponsor.src"
+                        :alt="sponsor.alt"
+                        class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                      />
+                    </div>
+                    <div class="sponsor-track" :key="currentSlide.id + '-track-2'">
+                      <img
+                        v-for="sponsor in currentSlide.sponsors"
+                        :key="currentSlide.id + '-track-2-' + sponsor.alt"
+                        :src="sponsor.src"
+                        :alt="sponsor.alt"
+                        class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
-            </Transition>
+            </div>
           </div>
 
-          <Transition name="fade" mode="out-in">
+          <Transition name="soft-fade" mode="out-in">
             <div class="text-center pb-4" :key="currentSlide.id + '-copy'">
               <h3 class="text-3xl font-bold mb-3">{{ currentSlide.title }}</h3>
               <p class="text-lg opacity-90">{{ currentSlide.description }}</p>
@@ -257,8 +257,8 @@ const carouselSlides = ref([
     title: 'Power Your Operations',
     description: 'High-availability bandwidth, proactive monitoring, and expert support to keep your teams connected 24/7.',
     image: {
-      desktop: '/logos/hero-image.jpg',
-      mobile: '/logos/hero-image.jpg',
+      desktop: '/logos/man.png',
+      mobile: '/logos/man.png',
       alt: 'Business professionals collaborating with fiber connectivity',
     },
     sponsors: [
@@ -272,8 +272,8 @@ const carouselSlides = ref([
     title: 'Business Dual Play',
     description: 'Power your Business with speed and Stability — Designed for small and growing businesses that need reliable connectivity to stay productive.',
     image: {
-      desktop: '/logos/aircall-lord-photographe-claire-jaillard-8 copie 1.png',
-      mobile: '/logos/aircall-lord-photographe-claire-jaillard-8 copie 1.png',
+      desktop: '/logos/woman.png',
+      mobile: '/logos/woman.png',
       alt: 'Customer enjoying managed connectivity services',
     },
     sponsors: [
@@ -284,12 +284,11 @@ const carouselSlides = ref([
   },
 ])
 
-// Carousel logic remains the same
 const activeSlide = ref(0)
 const currentSlide = computed(() => carouselSlides.value[activeSlide.value])
 
 let carouselTimer = null
-const CAROUSEL_INTERVAL= 6000
+const CAROUSEL_INTERVAL = 6000
 
 const nextSlide = () => {
   activeSlide.value = (activeSlide.value + 1) % carouselSlides.value.length
@@ -332,8 +331,8 @@ onMounted(startCarousel)
 onBeforeUnmount(stopCarousel)
 
 const submitStep1 = () => {
-  if (!formData.value.termsConsent) {
-    // Alert is kept but replaced with a console.error in a production environment or better yet, inline validation
+  if (!formData.value.termsConsent || !formData.value.product) {
+    console.error('Validation failed: Terms of Use and Product must be selected.')
     // The disabled attribute on the button largely negates the need for this alert on a standard click.
     console.error('Validation failed: Terms of Use must be accepted.')
     return
@@ -344,15 +343,6 @@ const submitStep1 = () => {
 
 <style scoped>
 /* Transition Styles */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.35s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -363,6 +353,16 @@ const submitStep1 = () => {
   transform: translateY(16px);
 }
 
+.soft-fade-enter-active,
+.soft-fade-leave-active {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.soft-fade-enter-from,
+.soft-fade-leave-to {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
 /* Marquee Styles */
 .sponsor-marquee {
   position: relative;
@@ -370,6 +370,10 @@ const submitStep1 = () => {
   width: max-content;
   gap: var(--gap, 2.5rem);
   animation: sponsor-scroll 14s linear infinite;
+}
+
+.animate-fade {
+  animation: hero-fade 6s ease-in-out infinite alternate;
 }
 
 .sponsor-track {
@@ -387,6 +391,15 @@ const submitStep1 = () => {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-fade {
+  0% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0.9;
   }
 }
 

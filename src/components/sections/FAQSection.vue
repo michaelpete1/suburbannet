@@ -4,11 +4,28 @@ import { ref } from 'vue'
 const faqs = [
   {
     q: 'How do I subscribe to Suburban Fiber?',
-    a: 'You can easily subscribe by visiting our Get Connected page, filling out the online request form, or contacting our customer service team. We’ll confirm coverage in your area and schedule installation.'
+    a: 'You can easily subscribe by visiting our <a href="https://www.get.suburban.ng" class="text-[#D50036] font-semibold underline-offset-2 hover:underline" target="_blank" rel="noopener">Get Connected</a> page, filling out the online request form, or contacting our customer service team. We\'ll confirm coverage in your area and schedule installation.'
   },
-  { q: 'Do you offer enterprise-grade internet solutions?', a: 'Yes. We provide dedicated business internet, managed services, and cloud connectivity tailored to enterprise needs.' },
-  { q: 'What is the typical installation timeline?', a: 'After confirming coverage and requirements, installation is usually scheduled within a few business days.' },
-  { q: 'Can I upgrade my plan later?', a: 'Absolutely. Plans are flexible—you can upgrade as your bandwidth needs grow.' },
+  {
+    q: 'Do you offer enterprise-grade internet solutions?',
+    a: 'Yes. Suburban Fiber provides dedicated enterprise connectivity, leased lines, and managed services to support large organizations, government institutions, and SMEs.'
+  },
+  {
+    q: 'Does Suburban Fiber provide Service Level Agreements (SLA)?',
+    a: 'Yes, all enterprise connections come with defined SLAs to guarantee uptime, performance, and quick technical support response times.'
+  },
+  {
+    q: 'How long does installation take?',
+    a: 'Once your location is confirmed for coverage, installation typically takes 2–5 working days, depending on proximity to our fiber network.'
+  },
+  {
+    q: 'What speed plans are available?',
+    a: 'We offer a range of flexible speed plans designed to suit every need — from streaming and gaming at home to running bandwidth-intensive business operations. Visit our <a href="/plans-pricing" class="text-[#D50036] font-semibold underline-offset-2 hover:underline">Plans & Pricing</a> page for details.'
+  },
+  {
+    q: 'Is Suburban Fiber unlimited?',
+    a: 'Yes! All our fiber plans offer unlimited data, so you can browse, stream, and work without worrying about data caps.'
+  }
 ]
 
 const openIndex = ref(0)
@@ -58,9 +75,8 @@ const toggleFaq = (idx) => {
               <p
                 v-if="openIndex === idx"
                 class="mt-4 text-[18px] leading-[26px] text-[#012635]/90"
-              >
-                {{ item.a }}
-              </p>
+                v-html="item.a"
+              />
             </transition>
           </div>
         </div>

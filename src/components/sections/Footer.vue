@@ -1,3 +1,8 @@
+<script setup>
+import { Facebook, Twitter, Linkedin } from 'lucide-vue-next'
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <footer class="footer-section bg-gray-900 text-white font-sans">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
@@ -7,31 +12,16 @@
           <p class="text-gray-400 text-sm mb-6">Connecting You to Speed, Reliability, and Support That Never Sleeps</p>
           <p class="text-sm font-semibold mb-3">Follow us</p>
           <div class="flex space-x-4 text-gray-400">
-            <a href="#" class="hover:text-red-600">f</a>
-            <a href="#" class="hover:text-red-600">t</a>
-            <a href="#" class="hover:text-red-600">in</a>
+            <a href="#" class="hover:text-red-600 transition" aria-label="Facebook">
+              <Facebook class="h-5 w-5" />
+            </a>
+            <a href="#" class="hover:text-red-600 transition" aria-label="Twitter">
+              <Twitter class="h-5 w-5" />
+            </a>
+            <a href="#" class="hover:text-red-600 transition" aria-label="LinkedIn">
+              <Linkedin class="h-5 w-5" />
+            </a>
           </div>
-          <p class="text-sm font-semibold mt-6 mb-3">Mobile app</p>
-          <div class="flex space-x-4 text-gray-400">
-            <a href="#" class="hover:text-red-600"></a>
-            <a href="#" class="hover:text-red-600">►</a>
-          </div>
-        </div>
-        <div class="space-y-6">
-          <h4 class="font-bold text-base mb-3">Solutions</h4>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li><a href="#" class="hover:text-red-600">Call Center</a></li>
-            <li><a href="#" class="hover:text-red-600">Support</a></li>
-            <li><a href="#" class="hover:text-red-600">Sales</a></li>
-            <li><a href="#" class="hover:text-red-600">Ecommerce</a></li>
-          </ul>
-          <h4 class="font-bold text-base mb-3">Resources</h4>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li><a href="#" class="hover:text-red-600">Knowledge Base</a></li>
-            <li><a href="#" class="hover:text-red-600">Customer Stories</a></li>
-            <li><a href="#" class="hover:text-red-600">Become a Partner</a></li>
-            <li><a href="#" class="hover:text-red-600">Build an Integration</a></li>
-          </ul>
         </div>
         <div class="space-y-6">
           <h4 class="font-bold text-base mb-3">Product</h4>
@@ -48,7 +38,6 @@
             <li><a href="#" class="hover:text-red-600">Managed Services</a></li>
             <li><a href="#" class="hover:text-red-600">Business Dual Play</a></li>
             <li><a href="#" class="hover:text-red-600">Business Triple Play</a></li>
-            <li><a href="#" class="hover:text-red-600">CTI Integration</a></li>
           </ul>
         </div>
         <div class="space-y-6">
@@ -64,8 +53,8 @@
       <div class="flex flex-col md:flex-row justify-between items-center pt-8 text-xs text-gray-500 space-y-4 md:space-y-0">
         <p>Copyright Suburban 2025</p>
         <div class="flex flex-wrap justify-center space-x-4">
-          <a href="#" class="hover:text-red-600">Privacy Policy</a>
-          <a href="#" class="hover:text-red-600">Terms of use</a>
+          <RouterLink to="/privacy-policy" class="hover:text-red-600">Privacy Policy</RouterLink>
+          <RouterLink to="/terms-of-use" class="hover:text-red-600">Terms of use</RouterLink>
           <a href="#" class="hover:text-red-600">Security</a>
           <a href="#" class="hover:text-red-600">Privacy FAQs</a>
           <a href="#" class="hover:text-red-600">DPA</a>
