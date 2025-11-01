@@ -43,7 +43,7 @@ import { RouterLink } from 'vue-router'
         <div class="space-y-6">
           <h4 class="font-bold text-base mb-3">Company</h4>
           <ul class="space-y-2 text-sm text-gray-400">
-            <li><a href="#" class="hover:text-red-600">Contact Us</a></li>
+            <li><RouterLink to="/contact" class="hover:text-red-600">Contact Us</RouterLink></li>
             <li><a href="#" class="hover:text-red-600">About Us</a></li>
             <li><a href="#" class="hover:text-red-600">Careers</a></li>
             <li><a href="#" class="hover:text-red-600">Uptime</a></li>

@@ -1,104 +1,209 @@
 <template>
-  <div class="about-page">
+  <div class="min-h-screen bg-gray-50">
     <Navbar />
-
-    <main class="about-main">
-      <section class="hero">
-        <div class="hero__content">
-          <p class="hero__eyebrow">About Us</p>
-          <h1 class="hero__title">Powering Connectivity. Enabling Possibility.</h1>
-          <p class="hero__subtitle">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+      <!-- Hero Section -->
+      <section class="relative bg-gradient-to-br from-white via-pink-50 to-rose-50 rounded-3xl p-4 sm:p-6 lg:p-8 md:p-12 shadow-xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-pink-500/5"></div>
+        <div class="relative max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full mb-4 sm:mb-6">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-xs sm:text-sm font-semibold tracking-widest text-red-600 uppercase">About Us</span>
+          <h1 class="mt-2 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Powering Connectivity.<br class="hidden sm:block">Enabling Possibility.</h1>
+          <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 lg:px-0">
             We are redefining connectivity across Africa, delivering high-speed, low-latency fiber solutions that power homes, businesses, and communities.
           </p>
-          <div class="hero__actions">
-            <RouterLink :to="{ path: '/', hash: '#features' }" class="hero__cta hero__cta--primary">Explore Solutions</RouterLink>
-            <RouterLink :to="{ path: '/', hash: '#request-form' }" class="hero__cta hero__cta--secondary">Request Service</RouterLink>
+          <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <RouterLink
+              to="/solutions"
+              class="group px-6 sm:px-8 py-2 sm:py-3 bg-red-600 text-white font-medium rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
+            >
+              Explore Solutions
+              <svg class="inline-block w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </RouterLink>
+            <RouterLink
+              to="/contact"
+              class="px-6 sm:px-8 py-2 sm:py-3 bg-white text-red-600 font-medium rounded-full border-2 border-red-200 shadow hover:bg-red-50 hover:border-red-300 transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
+            >
+              Request Service
+            </RouterLink>
           </div>
         </div>
-        <div class="hero__media" aria-hidden="true">
-          <div class="hero__photo hero__photo--main">
-            <img src="/logos/WOMANBLUE.png" alt="Suburban team member" />
-          </div>
-          <div class="hero__photo-stack">
-            <img src="/logos/GROUPCEO.png" alt="Suburban leadership" />
-            <img src="/logos/CEO.png" alt="Suburban executive conversation" />
-          </div>
-        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-4 sm:top-8 right-4 sm:right-8 w-20 h-20 sm:w-32 sm:h-32 bg-red-100 rounded-full opacity-20"></div>
+        <div class="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 bg-pink-100 rounded-full opacity-20"></div>
       </section>
 
-      <section class="journey">
-        <div class="journey__header">
-          <p class="journey__eyebrow">Suburban&apos;s Journey</p>
-          <h2 class="journey__title">What we&apos;ve been up to</h2>
-          <p class="journey__intro">
+      <!-- Timeline Section -->
+      <section class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <div class="max-w-4xl mx-auto text-center mb-8 lg:mb-12">
+          <span class="text-xs sm:text-sm font-semibold tracking-wider text-red-600 uppercase">Suburban's Journey</span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mt-2">What we've been up to</h2>
+          <p class="mt-4 text-sm sm:text-base lg:text-lg text-gray-600 px-4 lg:px-0">
             From pioneering connectivity experiences to building resilient cloud and managed services, each milestone represents a new chapter in how we empower customers across Nigeria and beyond.
           </p>
         </div>
 
-        <div class="journey__timeline">
-          <div class="timeline__track">
-            <div v-for="(item, index) in timeline" :key="item.year" class="timeline__item" :class="{ 'timeline__item--active': index === activeTimeline }" @mouseover="activeTimeline = index" @focusin="activeTimeline = index" tabindex="0">
-              <span class="timeline__icon">{{ item.year }}</span>
-              <span class="timeline__year">{{ item.year }}</span>
+        <div class="relative">
+          <!-- Timeline Track -->
+          <div class="flex overflow-x-auto pb-4 hide-scrollbar">
+            <div class="flex space-x-4 sm:space-x-6 lg:space-x-8 px-4">
+              <div
+                v-for="(item, index) in timeline"
+                :key="item.year"
+                @click="activeTimeline = index"
+                @keydown.enter="activeTimeline = index"
+                :class="{
+                  'scale-110': activeTimeline === index,
+                  'opacity-75 hover:opacity-100': activeTimeline !== index
+                }"
+                class="flex flex-col items-center cursor-pointer transition-all duration-300 flex-shrink-0 w-16 sm:w-20 lg:w-24"
+                tabindex="0"
+              >
+                <div
+                  class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center shadow-lg p-1 sm:p-2"
+                  :class="{'ring-2 ring-offset-2 ring-pink-400': activeTimeline === index}"
+                >
+                  <img
+                    :src="`/logos/${item.year}.png`"
+                    :alt="`${item.year} Milestone`"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <span class="mt-2 sm:mt-3 text-xs sm:text-sm font-medium text-gray-700">{{ item.year }}</span>
+              </div>
             </div>
           </div>
 
-          <div class="timeline__detail">
-            <transition-group name="fade" tag="div">
-              <article v-for="(item, index) in timeline" v-show="index === activeTimeline" :key="item.year" class="timeline__card">
-                <h3 class="timeline__card-year">{{ item.year }}</h3>
-                <p class="timeline__card-highlight">{{ item.highlight }}</p>
-              </article>
+          <!-- Timeline Content -->
+          <div class="mt-8 lg:mt-12">
+            <transition-group name="fade" mode="out-in">
+              <div
+                v-for="(item, index) in timeline"
+                v-show="activeTimeline === index"
+                :key="item.year"
+                class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-inner"
+              >
+                <p class="text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed">
+                  {{ item.highlight }}
+                </p>
+              </div>
             </transition-group>
           </div>
         </div>
       </section>
 
-      <section class="story">
-        <div class="story__content">
-          <p class="story__eyebrow">Our Story</p>
-          <h2 class="story__title">Year of formation and existence in Nigeria</h2>
-          <div class="story__card">
-            <p>
-              Suburban Fiber Company was incorporated in 2012 and has been in existence in Nigeria for over 20 years. We entered the Nigerian telecommunications market providing intelligence, statistical analysis, consultation, and network services.
-            </p>
-            <p>
-              We began supplying mobile phone companies with intercity and international transmission facilities, establishing Suburban as an industry leader with 60% market share from 2003 to 2006.
-            </p>
-            <p>
-              In less than five years the industry evolved to innovation leadership in advanced fiber technology, multimedia content distribution, and cloud platform services—a position we have sustained for the last two decades.
+      <!-- Story Section -->
+      <section class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="text-xs sm:text-sm font-semibold tracking-wider text-red-600 uppercase">Our Story</span>
+          <h2 class="mt-2 text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">Year of formation and existence in Nigeria</h2>
+          <div class="mt-4 sm:mt-6 bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg">
+            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+              Suburban Fiber Company was incorporated in 2012 and has been in existence in Nigeria for over 20 years.
+              Entered the Nigerian telecommunications market providing intelligence, statistical analysis, consultation,
+              network. Began providing mobile phone companies with intercity and international transmission facilities,
+              which established Suburban as an industry leader in this segment with 60% market share from 2003-06.
             </p>
           </div>
         </div>
-        <div class="story__media" aria-hidden="true">
-          <div class="story__image-frame">
-            <img src="/logos/aircall-reportage-lord-photographe-claire-jaillard-6%201.png" alt="Hold the vision. Trust the process." />
+        <div class="relative">
+          <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="/logos/aircall-reportage-lord-photographe-claire-jaillard-6%201.png"
+              alt="Suburban Fiber Office"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section class="leadership">
-        <div class="leadership__header">
-          <p class="leadership__eyebrow">Leadership spotlight</p>
-          <h2 class="leadership__title">A team committed to the digital future</h2>
-          <p class="leadership__intro">Meet the visionaries fostering growth, resilience, and inclusive connectivity across our network footprint.</p>
-        </div>
-
-        <div class="leadership__grid">
-          <article v-for="leader in leaders" :key="leader.name" class="leader-card">
-            <div class="leader-card__media">
-              <img :src="leader.photo" :alt="leader.name" />
+      <!-- Values Section -->
+      <section class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-3xl p-4 sm:p-6 lg:p-8 text-white shadow-xl">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+            <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-2xl backdrop-blur-sm">
+              <img src="/logos/2015.png" alt="" class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain">
             </div>
-            <div class="leader-card__body">
-              <p class="leader-card__name">{{ leader.name }}</p>
-              <p class="leader-card__role">{{ leader.role }}</p>
-              <p class="leader-card__summary">{{ leader.summary }}</p>
+            <div>
+              <p class="text-sm sm:text-base lg:text-lg font-semibold text-blue-200">Our Core Values,</p>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mt-1">Suburban Fiber</h3>
+              <p class="mt-2 sm:mt-3 text-sm sm:text-base text-blue-100 leading-relaxed">
+                Our passion for excellence is the blueprint we adapt to live up to the highest standards. It describes who we are and how we work, led by our core values of customer first, integrity, respect, performance, and accountability.
+              </p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
+
+      <!-- Commitment Section -->
+      <section class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-center text-gray-900 mb-8 lg:mb-12">We're Committing to This Together</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow">
+            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">🙂</div>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Empowering Connectivity for All</h3>
+            <p class="text-sm sm:text-base text-gray-600">
+              We are dedicated to making fast, reliable fiber-optic internet accessible across Nigeria not just in cities, but in underserved communities too.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow">
+            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">⭐</div>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Local Excellence & Sovereignty</h3>
+            <p class="text-sm sm:text-base text-gray-600">
+              By keeping our services rooted in Nigeria, we ensure data stays close, performance is high, and our solutions remain responsive to local needs.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-1">
+            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">⚡</div>
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Partnership & Trust</h3>
+            <p class="text-sm sm:text-base text-gray-600">
+              We believe that our relationship with you is a partnership, not just a service contract. We promise transparency and continuous improvement.
+            </p>
+          </div>
+        </div>
+      </section>
+        <section class="bg-gray-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-20">
+    <!-- Mission -->
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 lg:mb-8">Our Mission</h2>
+      <div class="bg-violet-100 rounded-xl p-4 sm:p-6 lg:p-8 md:p-10 max-w-4xl mx-auto shadow-sm">
+        <p class="text-3xl sm:text-4xl text-violet-600 mb-3 lg:mb-4">"</p>
+        <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+          Our mission is to empower businesses with the right web-based and cloud
+          solutions to enhance their productivity. We deliver this promise through a blend
+          of infrastructure, technology and applications specifically customized to meet
+          the needs of businesses in Nigeria. We've made technological advancements to
+          help increase your organizational advancements through world class solutions
+          that tap into your business needs and generate the required results. We digitally
+          transform your operations to create a high-performance, cost-effective and
+          hyper-converged infrastructure making our technology the next step in the
+          progression of the processes you already have in place. At Suburban, we don't
+          just meet your needs, we go further to making sure you remain productive.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div class="text-center">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 lg:mb-8">Our Vision</h2>
+      <div class="bg-blue-100 rounded-xl p-4 sm:p-6 lg:p-8 md:p-10 max-w-4xl mx-auto shadow-sm">
+        <p class="text-3xl sm:text-4xl text-violet-700 mb-3 lg:mb-4">"</p>
+        <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+          Our vision is to empower businesses reach their full potential with the use of
+          technology. From cloud storage, to hosting or setting up the business WiFi or
+          fibre optic laid Internet, we're geared to take your business to the digital age
+          where all you need to do is plug and play.
+        </p>
+      </div>
+    </div>
+  </section>
     </main>
-
     <Footer />
   </div>
 </template>
@@ -109,54 +214,41 @@ import Navbar from '../components/sections/Navbar.vue'
 import Footer from '../components/sections/Footer.vue'
 
 const timeline = [
-  {
-    year: '2012',
-    highlight: 'Exceeded the voice, data, and video performance benchmarks across our network.'
+  { 
+    year: '2012', 
+    highlight: 'Exceeded the voice, data, and video performance benchmarks across our network.' 
   },
-  {
-    year: '2013',
-    highlight: 'Built a state-of-the-art content delivery network in Nigeria.'
+  { 
+    year: '2013', 
+    highlight: 'Built a state-of-the-art content delivery network in Nigeria.' 
   },
-  {
-    year: '2015',
-    highlight: 'Commenced digitization and platform-as-a-service for SMEs, large corporates, and government agencies.'
+  { 
+    year: '2015', 
+    highlight: 'Commenced digitization and platform as a service for SME, Large Corporates, and Government agencies.' 
   },
-  {
-    year: '2017',
-    highlight: 'Delivered services to hundreds of businesses and service providers with software-defined networking and network function virtualization.'
+  { 
+    year: '2017', 
+    highlight: 'Commenced delivery of services powering hundreds of businesses, network service providers, and governments through advanced technologies like software-defined networking and network function virtualization.' 
   },
-  {
-    year: '2018',
-    highlight: 'Acquired advanced network security and threat monitoring capabilities to protect existing infrastructure.'
+  { 
+    year: '2018', 
+    highlight: 'Acquired advanced network security and threat monitoring capability to complement and protect existing infrastructure.' 
   },
-  {
-    year: '2019',
-    highlight: 'Deployed hyper-converged infrastructure enabling high-performance web portals and localized hosting services across West Africa.'
+  { 
+    year: '2019', 
+    highlight: 'Deployed hyper-converged infrastructure to enable the robust performance of web portals and localized hosting services for organizations in the West-African sub-region.' 
   },
-  {
-    year: '2020',
-    highlight: 'Acquired Hyper Coverage Infrastructure and completed the transition to a digital service provider.'
-  }
-]
-
-const leaders = [
-  {
-    name: 'Group CEO',
-    role: 'Guiding long-term strategy and investments',
-    summary: 'Shapes our multi-year roadmap for fiber, cloud, and managed services that scale with customer ambitions.',
-    photo: '/logos/GROUPCEO.png'
+  { 
+    year: '2020', 
+    highlight: 'Acquired Hyper Coverage Infrastructure and completed transition to a digital service provider.' 
   },
-  {
-    name: 'Chief Executive Officer',
-    role: 'Driving operational excellence',
-    summary: 'Leads the teams that keep projects on track, experiences seamless, and support always-on.',
-    photo: '/logos/CEO.png'
+  { 
+    year: '2021', 
+    highlight: 'Launched 5G-ready infrastructure and expanded our network coverage across Nigeria.' 
   },
-  {
-    name: 'Leadership Team',
-    role: 'Empowering communities and partners',
-    summary: 'Brings together expertise across engineering, product, and customer success to transform connectivity.',
-    photo: '/logos/WOMANBLUE.png'
+  { 
+    year: '2022', 
+    highlight: 'Introduced next-generation fiber technology, offering speeds up to 10Gbps for enterprise clients.' 
   }
 ]
 
@@ -164,403 +256,18 @@ const activeTimeline = ref(0)
 </script>
 
 <style scoped>
-.about-page {
-  background: #f8fafc;
-  color: #0b1f33;
-  min-height: 100vh;
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.about-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(3rem, 5vw, 4.5rem) 1.5rem clamp(4rem, 7vw, 5.5rem);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(3.5rem, 6vw, 5rem);
-}
-
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #fde8ee 55%, #fee2e2 100%);
-  border-radius: clamp(1.75rem, 3vw, 2.5rem);
-  padding: clamp(2.5rem, 5vw, 3.5rem);
-  box-shadow: 0 24px 60px rgba(244, 63, 94, 0.15);
-}
-
-.hero__content {
-  flex: 1 1 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.hero__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #cf0a2c;
-}
-
-.hero__title {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  line-height: 1.15;
-  font-weight: 700;
-  color: #0e1f3d;
-}
-
-.hero__subtitle {
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
-  line-height: 1.75;
-  color: rgba(11, 31, 51, 0.75);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  font-weight: 600;
-  padding: 0.9rem 1.9rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  text-decoration: none;
-}
-
-.hero__cta--primary {
-  background: #cf0a2c;
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(207, 10, 44, 0.25);
-}
-
-.hero__cta--primary:hover {
-  transform: translateY(-1px);
-  background: #b00024;
-}
-
-.hero__cta--secondary {
-  background: rgba(255, 255, 255, 0.65);
-  color: #cf0a2c;
-  border: 1px solid rgba(207, 10, 44, 0.25);
-}
-
-.hero__cta--secondary:hover {
-  border-color: rgba(207, 10, 44, 0.45);
-  transform: translateY(-1px);
-}
-
-.hero__media {
-  flex: 1 1 320px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.25rem;
-  position: relative;
-}
-
-.hero__photo {
-  border-radius: clamp(1.5rem, 3vw, 2rem);
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
-}
-
-.hero__photo--main img,
-.hero__photo-stack img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero__photo--main {
-  grid-row: span 2;
-  background: #fff;
-}
-
-.hero__photo-stack {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.journey {
-  background: #fff;
-  border-radius: clamp(1.75rem, 3vw, 2.5rem);
-  padding: clamp(2.75rem, 5vw, 3.5rem);
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 3vw, 2.75rem);
-}
-
-.journey__header {
-  max-width: 720px;
-}
-
-.journey__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #cf0a2c;
-  margin-bottom: 0.75rem;
-}
-
-.journey__title {
-  font-size: clamp(2rem, 3vw, 2.7rem);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: #0e1f3d;
-}
-
-.journey__intro {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: rgba(11, 31, 51, 0.7);
-}
-
-.journey__timeline {
-  display: grid;
-  gap: clamp(2rem, 3vw, 2.75rem);
-}
-
-.timeline__track {
-  display: flex;
-  overflow-x: auto;
-  gap: 1.5rem;
-  padding-bottom: 0.5rem;
-  position: relative;
-  scrollbar-width: thin;
-}
-
-.timeline__track::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.35rem;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(207, 10, 44, 0.25), rgba(15, 23, 42, 0.1));
-}
-
-.timeline__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  position: relative;
-  min-width: 84px;
-  outline: none;
-}
-
-.timeline__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 24px;
-  background: linear-gradient(150deg, #f43f5e, #fb7185);
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 10px 24px rgba(244, 63, 94, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.timeline__year {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(11, 31, 51, 0.65);
-}
-
-.timeline__item--active .timeline__icon,
-.timeline__item:focus-visible .timeline__icon,
-.timeline__item:hover .timeline__icon {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 34px rgba(244, 63, 94, 0.3);
-}
-
-.timeline__detail {
-  min-height: 140px;
-  position: relative;
-}
-
-.timeline__card {
-  background: linear-gradient(135deg, rgba(207, 10, 44, 0.12), rgba(255, 255, 255, 0.95));
-  border-radius: 20px;
-  padding: 1.75rem;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
-}
-
-.timeline__card-year {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #cf0a2c;
-  margin-bottom: 0.75rem;
-}
-
-.timeline__card-highlight {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: rgba(11, 31, 51, 0.78);
-}
-
-.story {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
-}
-
-.story__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.story__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #cf0a2c;
-}
-
-.story__title {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: #0e1f3d;
-}
-
-.story__card {
-  background: #fff;
-  border-radius: clamp(1.5rem, 3vw, 2.25rem);
-  padding: clamp(1.75rem, 4vw, 2.5rem);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
-  display: grid;
-  gap: 1.25rem;
-  color: rgba(11, 31, 51, 0.75);
-  font-size: 1rem;
-  line-height: 1.85;
-}
-
-.story__media {
-  display: flex;
-  justify-content: center;
-}
-
-.story__image-frame {
-  border-radius: clamp(1.5rem, 3vw, 2.25rem);
-  overflow: hidden;
-  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.22);
-}
-
-.story__image-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.leadership {
-  background: #fff;
-  border-radius: clamp(1.75rem, 3vw, 2.5rem);
-  padding: clamp(2.75rem, 5vw, 3.5rem);
-  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 3vw, 2.75rem);
-}
-
-.leadership__header {
-  max-width: 680px;
-}
-
-.leadership__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #cf0a2c;
-  margin-bottom: 0.75rem;
-}
-
-.leadership__title {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: #0e1f3d;
-  margin-bottom: 0.75rem;
-}
-
-.leadership__intro {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: rgba(11, 31, 51, 0.7);
-}
-
-.leadership__grid {
-  display: grid;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.leader-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(255, 255, 255, 0.95));
-  border-radius: 1.75rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
-}
-
-.leader-card__media {
-  background: #0e1f3d;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.leader-card__media img {
-  width: 100%;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 1.25rem;
-}
-
-.leader-card__body {
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.leader-card__name {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #0e1f3d;
-}
-
-.leader-card__role {
-  font-size: 0.9rem;
-  color: rgba(11, 31, 51, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.leader-card__summary {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(11, 31, 51, 0.7);
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter-from,
@@ -568,54 +275,32 @@ const activeTimeline = ref(0)
   opacity: 0;
 }
 
-@media (max-width: 1024px) {
-  .hero {
-    align-items: flex-start;
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  .space-y-16 > * + * {
+    margin-top: 3rem;
   }
 
-  .hero__media {
-    grid-template-columns: 1fr 1fr;
+  .rounded-3xl {
+    border-radius: 1.5rem;
   }
 
-  .story {
-    grid-template-columns: 1fr;
-  }
-
-  .story__media {
-    order: 2;
+  .shadow-xl {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: clamp(2rem, 8vw, 2.75rem);
+  .space-y-16 > * + * {
+    margin-top: 4rem;
   }
 
-  .hero__media {
+  .grid.md\\:grid-cols-2 {
     grid-template-columns: 1fr;
   }
 
-  .hero__photo-stack {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .journey {
-    padding: clamp(2rem, 7vw, 2.75rem);
-  }
-
-  .leadership {
-    padding: clamp(2rem, 7vw, 2.75rem);
-  }
-}
-
-@media (max-width: 640px) {
-  .hero__actions {
+  .flex.flex-col.md\\:flex-row {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .leader-card__media img {
-    max-height: 220px;
   }
 }
 </style>

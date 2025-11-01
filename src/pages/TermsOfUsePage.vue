@@ -4,7 +4,7 @@
     <header class="hero">
       <div class="hero__inner">
         <div class="hero__card">
-          <p class="hero__card-eyebrow">Terms &amp; Conditions</p>
+           <p class="hero__card-eyebrow">Terms &amp; Conditions</p>
           <h1 class="hero__title">Service Terms and Conditions</h1>
           <p class="hero__subtitle">Service Terms and Conditions of the Suburban Fiber</p>
         </div>
@@ -71,7 +71,7 @@ const sections = [
     body: /* html */ `
       <p><strong>Activation Date</strong> shall mean the date on which Suburban makes the Service(s) available to the Customer.</p>
       <p><strong>Agreement</strong> shall mean this Suburban Service Terms and Conditions for the provision of IP leased circuit between Suburban and Customer as well as any applicable Service Order Form, Service Level Agreement and any other addenda, schedules, or exhibits attached hereto and/or incorporated herein by reference.</p>
-      <p><strong>Help-Desk</strong> shall mean the interface point for Customer to access Suburban’s support and maintenance facilities.</p>
+      <p><strong>Help-Desk</strong> shall mean the interface point for Customer to access Suburban's support and maintenance facilities.</p>
       <p><strong>IP</strong> shall mean internet protocol.</p>
       <p><strong>Minimum Service Term</strong> shall mean a period of one (1) year.</p>
       <p><strong>ODF</strong> shall mean Optical Distribution Frame used to terminate the fibre optic cable to allow connection of transmission equipment.</p>
@@ -95,7 +95,7 @@ const sections = [
     body: /* html */ `
       <ol>
         <li>Suburban agrees to provide the Customer with IP capacity over its optical fibre network and any other routes as may be requested by Customer from time to time.</li>
-        <li>Parties understand and agree that the Customer shall nominate and appoint a dedicated technical person who will communicate and work alongside Suburban’s team for the diagnosis and resolution of the Customer’s technical issues. Suburban may provide support and guidance as necessary for the resolution of such technical issues the Customer may experience.</li>
+        <li>Parties understand and agree that the Customer shall nominate and appoint a dedicated technical person who will communicate and work alongside Suburban's team for the diagnosis and resolution of the Customer's technical issues. Suburban may provide support and guidance as necessary for the resolution of such technical issues the Customer may experience.</li>
       </ol>
     `
   },
@@ -106,7 +106,7 @@ const sections = [
     body: /* html */ `
       <ol>
         <li>Unless provided otherwise in the relevant Service Request Form, Suburban will deliver the Services to the Customer fourteen (14) to twenty-one (21) working days from the date of acceptance of this Terms and Conditions and/or the execution of the relevant Service Request Form. Any changes thereafter by Suburban will be properly communicated to the Customer. Any request for an upgrade or downgrade of the Service(s) delivered shall be documented through an additional Service Request Form to be executed by the Parties.</li>
-        <li>Installation of the Services may take a longer period of time than advertised or indicated by Suburban and as such, Suburban will not be liable for any loss occasioned by such delay. Suburban’s ability to complete the installation of and provision of the Services expediently will depend on the Customer’s availability and ability to provide access to the service location for Suburban’s employees and agents. Suburban shall not be responsible or liable for any loss occasioned by such delay.</li>
+        <li>Installation of the Services may take a longer period of time than advertised or indicated by Suburban and as such, Suburban will not be liable for any loss occasioned by such delay. Suburban's ability to complete the installation of and provision of the Services expediently will depend on the Customer's availability and ability to provide access to the service location for Suburban's employees and agents. Suburban shall not be responsible or liable for any loss occasioned by such delay.</li>
         <li>Suburban shall proceed with the installation of the Services provided that it has received from the Customer all necessary contractual documents and technical information, and support that it deems necessary. Where the conditions above have not been met, Suburban at its sole discretion may cancel the installation of the Service and/or the Service Request Form prior to the Activation Date upon providing notice to the Customer.</li>
         <li>In no event shall Suburban be responsible for any Service impairment or loss of functionality, or breach of any performance obligation under this Agreement where any Service failure, fault or delay in performance is directly or indirectly related to any failure by the Customer to provide access to the service location and/or necessary equipment for the installation of the Service.</li>
       </ol>
@@ -118,7 +118,7 @@ const sections = [
     heading: 'Terms of Agreement',
     body: /* html */ `
       <ol>
-        <li>The Customer’s subscription to the Services shall be for a Minimum Service Term of one (1) year commencing on the Activation Date (the “Initial Term”) and the Customer shall remain bound by this Agreement for the duration of the Minimum Service Term.</li>
+        <li>The Customer's subscription to the Services shall be for a Minimum Service Term of one (1) year commencing on the Activation Date (the "Initial Term") and the Customer shall remain bound by this Agreement for the duration of the Minimum Service Term.</li>
         <li>Following the Minimum Service Term, this Agreement shall automatically renew for a further period of one (1) year at the expiration of each one (1) year term provided a Party does not send a written notice of intention to terminate the Agreement.</li>
       </ol>
     `
@@ -133,7 +133,7 @@ const sections = [
         <li>Where Customer terminates the Service Request Form and this Agreement prior to the completion of the Minimum Service Term, the Customer shall pay to Suburban all outstanding Service Fees for any portion of the Services rendered.</li>
         <li>Where the Customer terminates a Service Request Form prior to the Activation Date of the Service, the Customer shall reimburse Suburban for all reasonable costs incurred by Suburban in the implementation of the Service to be terminated.</li>
         <li>Where this Agreement is terminated in accordance with this Clause, Suburban reserves the right to solely determine whether or not to refund any payment made under this Agreement.</li>
-        <li>Suburban reserves the right to immediately suspend the provision of the Services and/or terminate this Agreement by giving thirty (30) days’ notice of such termination to the Customer where: (a) Customer has failed to make payments in accordance with this Agreement; (b) Customer has breached any condition of this Agreement or the Terms and Conditions; or (c) Suburban suspects the Customer has carried on fraudulent or any unauthorised activity.</li>
+        <li>Suburban reserves the right to immediately suspend the provision of the Services and/or terminate this Agreement by giving thirty (30) days' notice of such termination to the Customer where: (a) Customer has failed to make payments in accordance with this Agreement; (b) Customer has breached any condition of this Agreement or the Terms and Conditions; or (c) Suburban suspects the Customer has carried on fraudulent or any unauthorised activity.</li>
         <li>If Suburban terminates the Services on account of non-payment and/or breach of the Terms and Conditions or this Agreement, the Customer may be required to pay a reconnection fee for reconnection of the Service.</li>
         <li>Upon termination of this Agreement for any reason whatsoever, Suburban shall be entitled to recover gateways, routers and fibre cables installed at each of the Service Locations pursuant to this Agreement.</li>
       </ol>
@@ -145,10 +145,10 @@ const sections = [
     heading: 'Payment',
     body: /* html */ `
       <ol>
-        <li>Customer shall pay Suburban the amount stated in the relevant invoice as consideration for Suburban’s provision of the Services (“Service Fee”).</li>
+        <li>Customer shall pay Suburban the amount stated in the relevant invoice as consideration for Suburban's provision of the Services ("Service Fee").</li>
         <li>The fees for the Services are fixed and non-variable for the duration of this Agreement. Unless otherwise stated, the fees exclude Value Added Tax (VAT), Withholding tax and all other taxes imposed in Nigeria on the provision of the Services.</li>
         <li>Suburban shall present monthly invoices to Customer specifying the particulars of the Services to which it relates.</li>
-        <li>Where the Customer accepts the invoiced amount contained in Suburban’s invoice, it shall pay the said amount on the due date stated on the invoice.</li>
+        <li>Where the Customer accepts the invoiced amount contained in Suburban's invoice, it shall pay the said amount on the due date stated on the invoice.</li>
         <li>Customer shall not be entitled to a claim for a refund of the payment made, notwithstanding any termination or suspension of the Services, or any relocation by the Customer before the end of the period covered by the payment made.</li>
         <li>Suburban may, after the Minimum Term, revise the Service Fee by giving the Customer no less than one (1) month’s notice in writing of any such revision. If such revision is not acceptable to the Customer, it may terminate this Agreement by giving thirty (30) days written notice to Suburban.</li>
       </ol>
@@ -161,7 +161,7 @@ const sections = [
     body: /* html */ `
       <ol>
         <li>Suburban shall provide service availability in accordance with the Service Level Annexure to this Agreement, failing which the Customer will be compensated for the lost period where the service was interrupted.</li>
-        <li>Any service interruption of the capacity leased to Customer hereunder shall give rise to compensation in airtime credit to Customer in accordance with the Service Level Annexure. No allowance for compensation will be provided for any interruption caused by: the Customer or its representatives; planned maintenance duly communicated; or local loop issues within the Customer’s premises.</li>
+        <li>Any service interruption of the capacity leased to Customer hereunder shall give rise to compensation in airtime credit to Customer in accordance with the Service Level Annexure. No allowance for compensation will be provided for any interruption caused by: the Customer or its representatives; planned maintenance duly communicated; or local loop issues within the Customer's premises.</li>
         <li>Service claims are subject to conditions including timely written notification, calculations based on the month of occurrence, application at month end, and settlement of outstanding amounts.</li>
         <li>Suburban agrees to notify Customer in good faith of any Service interruptions, failures or violations of which it is aware.</li>
         <li>The following outages shall not be counted as unavailable time for the purpose of calculating service availability: force majeure events and cable cuts; planned maintenance; or outages caused by faults at the customer end or part of the circuit not maintained by Suburban.</li>
@@ -179,7 +179,7 @@ const sections = [
         <li>95% – 90%: 3 days free service</li>
         <li>90% – 80%: 1 week free service</li>
       </ul>
-      <p>Service Credits shall be Customer’s sole and exclusive remedy with regards to the failure of the Service to comply with the guaranteed service level.</p>
+      <p>Service Credits shall be Customer's sole and exclusive remedy with regards to the failure of the Service to comply with the guaranteed service level.</p>
       <h4>Fault Response and Restoration</h4>
       <p>Service Provider aims to meet or better the following response times. Mean Time to Repair (MTTR) runs from when the call is placed with Service Provider by Customer.</p>
       <table>
@@ -201,7 +201,6 @@ const sections = [
             <td>30 minutes</td>
             <td>6 hours</td>
           </tr>
-          <tr>
             <td>Minor Fault</td>
             <td>60 minutes</td>
             <td>36 hours</td>
@@ -210,7 +209,7 @@ const sections = [
       </table>
       <p>Should a fault be raised outside normal working hours and declared as Minor, MTTR shall not commence until the following working day. Planned outages are not included in these performance figures.</p>
       <h4>Planned Outages</h4>
-      <p>The planned outage window is daily from 01:00 to 04:00 (local time to the exchange). Service Provider will provide five working days’ notification of any scheduled maintenance. Customer scheduled maintenance requires five hours prior notice. Emergency maintenance may occur without prior notice, with best-effort notification.</p>
+      <p>The planned outage window is daily from 01:00 to 04:00 (local time to the exchange). Service Provider will provide five working days' notification of any scheduled maintenance. Customer scheduled maintenance requires five hours prior notice. Emergency maintenance may occur without prior notice, with best-effort notification.</p>
       <h4>Incident Classification</h4>
       <p>Incident classification is mutually agreed, with Service Provider resolving disagreements and able to reclassify during repairs.</p>
       <table>
@@ -318,7 +317,7 @@ const sections = [
     body: /* html */ `
       <ol>
         <li>The Services rendered by Suburban do not include services or supplies required as a result of: (a) damage to the System(s) caused by Customer or a third party; (b) modifications, removals or obliteration of serial numbers or identifying marks by non-Suburban personnel; or (c) attempts to move, reinstall, repair, maintain or modify the System(s) by Customer or a third party.</li>
-        <li>Suburban’s liability to the Customer for failure to provide the Services in accordance with this Agreement shall be limited to the provision of the Services at no additional charge for a duration equivalent to that in which the Services were not provided when they ought to have been provided.</li>
+        <li>Suburban's liability to the Customer for failure to provide the Services in accordance with this Agreement shall be limited to the provision of the Services at no additional charge for a duration equivalent to that in which the Services were not provided when they ought to have been provided.</li>
       </ol>
     `
   },
@@ -359,9 +358,9 @@ const sections = [
     heading: 'Limitation of Liability',
     body: /* html */ `
       <ol>
-        <li>Suburban shall not be liable for: (a) loss or damage where there is no breach of contractual obligation or legal duty of care; (b) loss or damage caused by the Customer’s use of the Services which was not contemplated; (c) loss of business, contracts, profits, anticipated savings, reputation, goods, revenue or use; or (d) any special, consequential or indirect losses.</li>
+        <li>Suburban shall not be liable for: (a) loss or damage where there is no breach of contractual obligation or legal duty of care; (b) loss or damage caused by the Customer's use of the Services which was not contemplated; (c) loss of business, contracts, profits, anticipated savings, reputation, goods, revenue or use; or (d) any special, consequential or indirect losses.</li>
         <li>Neither Party excludes liability for death or personal injury resulting from its negligence or for wilful misconduct, including fraud.</li>
-        <li>Suburban’s liability for failure to provide the Services shall be limited to amounts payable by way of air time credit and shall not exceed one (1) month air credit time of the Services.</li>
+        <li>Suburban's liability for failure to provide the Services shall be limited to amounts payable by way of air time credit and shall not exceed one (1) month air credit time of the Services.</li>
       </ol>
     `
   },
@@ -454,7 +453,7 @@ const sections = [
     heading: 'Data Protection',
     body: /* html */ `
       <p>Suburban shall treat Customer information in confidence and shall not disclose such information to a third party except where required by law. Where disclosure is made, Suburban shall ensure the third party is bound by a similar data protection obligation.</p>
-      <p>Each Party undertakes to comply with applicable privacy laws, including the Nigeria Data Protection Regulation 2019 and Suburban’s Data Protection and Privacy Policy available at <a href="https://suburbanfiberco.com/privacy-policy" target="_blank" rel="noopener">https://suburbanfiberco.com/privacy-policy</a>.</p>
+      <p>Each Party undertakes to comply with applicable privacy laws, including the Nigeria Data Protection Regulation 2019 and Suburban's Data Protection and Privacy Policy available at <a href="https://suburbanfiberco.com/privacy-policy" target="_blank" rel="noopener">https://suburbanfiberco.com/privacy-policy</a>.</p>
     `
   },
   {
@@ -504,12 +503,25 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .terms-page {
-  background: #fff;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   color: #111827;
+  min-height: 100vh;
 }
 .hero {
-  background: #f4f5f8;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: clamp(5rem, 8vw, 6.5rem) 1.5rem clamp(4rem, 6vw, 4.5rem);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
 }
 .hero__inner {
   max-width: 1000px;
@@ -517,15 +529,19 @@ onBeforeUnmount(() => {
   display: flex;
   justify-content: center;
   padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 .hero__card {
   width: 100%;
   max-width: 880px;
   border-radius: clamp(1.75rem, 3.5vw, 2.5rem);
-  background: linear-gradient(120deg, #f43f5e, #fb7185);
-  box-shadow: 0 24px 54px rgba(244, 63, 94, 0.22);
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+  box-shadow: 0 32px 64px rgba(220, 38, 38, 0.25), 0 16px 32px rgba(239, 68, 68, 0.15);
   padding: clamp(2rem, 5.5vw, 3.5rem);
   text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .hero__card-eyebrow {
   display: inline-block;
@@ -535,21 +551,27 @@ onBeforeUnmount(() => {
   font-size: clamp(0.8rem, 1.2vw, 1rem);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
 }
 .hero__title {
-  text-transform: uppercase;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 500;
+  text-transform: none;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 600;
   line-height: 1.25;
   color: #fff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .hero__subtitle {
   margin: 0 auto;
   max-width: 640px;
-  font-size: clamp(1rem, 1.2vw, 1.05rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.25vw, 1.0625rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .layout {
   display: grid;
@@ -558,6 +580,11 @@ onBeforeUnmount(() => {
   max-width: 1200px;
   margin: 0 auto;
   padding: clamp(3rem, 5vw, 4rem) 1.5rem clamp(5rem, 8vw, 6rem);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .toc {
   display: none;
@@ -620,8 +647,17 @@ onBeforeUnmount(() => {
 }
 .content__section {
   scroll-margin-top: 120px;
-  padding-bottom: 2.75rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.5);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.content__section:hover {
+  background: rgba(255, 255, 255, 0.6);
 }
 .content__section:last-of-type {
   border-bottom: 0;
@@ -643,11 +679,11 @@ onBeforeUnmount(() => {
   margin-bottom: 1.25rem;
   color: #4b5563;
 }
-.content__body :deep(li + li) {
+.content__body :deep(ol li + li),
+.content__body :deep(ul li + li) {
   margin-top: 0.75rem;
 }
-.content__body :deep(h3),
-.content__body :deep(h4) {
+.content__body :deep(h3) {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
@@ -674,21 +710,6 @@ onBeforeUnmount(() => {
   border: 1px solid #e5e7eb;
   white-space: nowrap;
   font-size: 0.95rem;
-}
-.content__body :deep(table) {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5rem;
-}
-.content__body :deep(table th),
-.content__body :deep(table td) {
-  border: 1px solid #e5e7eb;
-  padding: 0.75rem;
-  text-align: left;
-}
-.content__body :deep(table th) {
-  background: #f8fafc;
-  font-weight: 700;
 }
 .content__body :deep(a) {
   color: #dc2626;

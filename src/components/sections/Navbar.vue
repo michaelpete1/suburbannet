@@ -34,7 +34,7 @@
             <div v-if="openMenu==='services'" id="menu-services" role="menu" class="absolute top-full left-40 mt-3 w-60 rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden">
               <RouterLink to="/business-internet" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Business Internet</RouterLink>
               <RouterLink to="/managed-services" role="menuitem" class="block px-4 py-3 text-sm font-semibold text-white bg-[#D50036] hover:bg-[#B0002B] transition-colors" @click="closeAll">Managed Services</RouterLink>
-              <RouterLink :to="{ path: '/managed-services', hash: '#infrastructure' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Infrastructure</RouterLink>
+              <RouterLink to="/infrastructure" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Infrastructure</RouterLink>
               <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Partners Program</RouterLink>
             </div>
           </Transition>
@@ -90,7 +90,7 @@
           <div v-if="mobileSection==='services'" class="pl-4 space-y-1">
             <RouterLink to="/business-internet" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Business Internet</RouterLink>
             <RouterLink to="/managed-services" class="block px-2 py-2 text-sm rounded bg-[#D50036] text-white hover:bg-[#B0002B]" @click="closeAll">Managed Services</RouterLink>
-            <RouterLink :to="{ path: '/managed-services', hash: '#infrastructure' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Infrastructure</RouterLink>
+            <RouterLink to="/infrastructure" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Infrastructure</RouterLink>
             <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Partners Program</RouterLink>
           </div>
 

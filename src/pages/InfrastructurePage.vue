@@ -7,10 +7,10 @@
          :class="gradientClasses">
 
       <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-        Managed Services
+        Infrastructure as a Service (IaaS)
       </h2>
       <p class="mt-4 text-xl sm:text-2xl max-w-4xl mx-auto font-light leading-relaxed">
-        In today's digital world, managing technology is **strategic—not optional**. Suburban Managed Services provides the expertise, tools, and network to keep your operations secure, reliable, and future-ready.
+        Power your business with scalable, secure, on-demand infrastructure built for Africa, engineered for growth.
       </p>
     </div>
 
@@ -18,13 +18,27 @@
 
       <div class="card-base">
         <div>
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">Technical Support</h3>
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">Data Center</h3>
           <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Getting a skilled professional is difficult and when you find one, often too expensive, but you still need them for your business. With the lowest market rate and highly skilled and professional delivery of services, we attend to your business technology needs. We provide technical support for the full spectrum of your business I.T needs.
+            Our hyperscale facilities provide businesses with a one-stop-shop for all their IT and capacity requirements. Built-in a campus-style design, our hyper-scale facilities allow organizations to build out further data centers quickly within the same location. This enables scalability of storage and compute capacity rapidly to meet ever-fluctuating demand.
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-managed-red">
+          <a :href="'#'" class="btn-iaas-red">
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <div class="card-base">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">Video</h3>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Suburban Video Services consist of our Content Delivery Network (CDN), Suburban Business TV, Suburban Surveillance System, and other related solutions aimed at business productivity.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a :href="'#'" class="btn-iaas-red">
             Request Services
           </a>
         </div>
@@ -32,22 +46,34 @@
 
       <div class="card-base">
         <div>
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">Professional Services</h3>
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">Bundled Service</h3>
           <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            With over **20 Years' experience** in the Telecommunication and Internet Service Industry, our professional services avail you the benefit of all our learning over the years.
+            Need a custom solution (Infrastructure, Network, and Business Applications (Software)) for your business, our bundled services have this covered for you.
           </p>
           <p class="text-lg text-gray-600 leading-relaxed">
-            We would guide your project to stay on the course of **Integrity, Excellence, and Profitability**.
+            We plan, supply, and deploy all custom resources for your project, and our offerings are best suited for any form and size of business, with flexible payment options.
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-managed-red">
+          <a :href="'#'" class="btn-iaas-red">
             Request Services
           </a>
         </div>
       </div>
 
-
+      <div class="card-base">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">Connectivity</h3>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            We provide a wide range of connectivity solutions and services to meet mission-critical business objectives at the most efficient cost. Our vanilla Internet service - Business Internet is a high speed, low latency, SLA-backed connection that is designed for businesses that require high uptime and reliable internet connections.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <a :href="'#'" class="btn-iaas-red">
+            Get Connectivity
+          </a>
+        </div>
+      </div>
 
     </div>
 
@@ -113,7 +139,7 @@ const trackLogos = computed(() => [...logos, ...logos])
   height: 100%;
 }
 
-.btn-managed-red {
+.btn-iaas-red {
   display: block;
   width: 100%;
   text-align: center;
@@ -127,7 +153,7 @@ const trackLogos = computed(() => [...logos, ...logos])
   transition: background 150ms ease-in-out;
 }
 
-.btn-managed-red:hover {
+.btn-iaas-red:hover {
   background: linear-gradient(to right, rgb(185, 28, 28), rgb(220, 38, 38));
 }
 

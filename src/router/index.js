@@ -16,7 +16,9 @@ const router = createRouter({
     {
       path: '/techosphere',
       name: 'techosphere',
-      component: () => import('../pages/TechospherePage.vue')
+      beforeEnter() {
+        window.location.href = 'https://techosphere.ng/'
+      }
     },
     {
       path: '/managed-services',
@@ -32,6 +34,46 @@ const router = createRouter({
       path: '/terms-of-use',
       name: 'terms-of-use',
       component: () => import('../pages/TermsOfUsePage.vue')
+    },
+    {
+      path: '/business-internet',
+      name: 'business-internet',
+      component: () => import('../pages/BusinessInternetPage.vue')
+    },
+    {
+      path: '/business-wifi',
+      name: 'business-wifi',
+      component: () => import('../pages/BusinessWifiPage.vue')
+    },
+    {
+      path: '/business-voice',
+      name: 'business-voice',
+      component: () => import('../pages/BusinessVoicePage.vue')
+    },
+    {
+      path: '/infrastructure',
+      name: 'infrastructure',
+      component: () => import('../pages/InfrastructurePage.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('../pages/SuccessPage.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../pages/ContactPage.vue')
+    },
+    {
+      path: '/cloud-services-step-2',
+      name: 'cloud-services-step-2',
+      component: () => import('../pages/CloudServicesStep2.vue')
+    },
+    {
+      path: '/business-wifi-step-2',
+      name: 'business-wifi-step-2',
+      component: () => import('../pages/BusinessWifiStep2.vue')
     },
   ],
   scrollBehavior(to, from, savedPosition) {

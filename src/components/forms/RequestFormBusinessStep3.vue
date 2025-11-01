@@ -386,20 +386,18 @@
             Congratulations! Your payment is successful and your ticket has been created. We'll get back to you shortly.
           </p>
           <div class="flex flex-wrap justify-center gap-4">
-            <button
-              type="button"
+            <router-link
+              to="/"
               class="px-6 py-3 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition"
-              @click="router.push('/')"
             >
               Go Home
-            </button>
-            <button
-              type="button"
+            </router-link>
+            <router-link
+              to="/"
               class="px-6 py-3 rounded-full bg-red-600 text-sm font-semibold text-white shadow-lg shadow-red-500/30 hover:bg-red-700 transition"
-              @click="goBack"
             >
               Back to Product Page
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -601,9 +599,7 @@ const processPayment = async () => {
   processingPayment.value = true
   try {
     await new Promise((resolve) => setTimeout(resolve, 1500))
-    showPayment.value = false
-    showSuccess.value = false
-    paymentComplete.value = true
+    router.push('/success')
   } catch (error) {
     console.error('Payment failed:', error)
     alert('Payment failed. Please try again.')
@@ -624,9 +620,7 @@ const completeBankTransfer = async () => {
   processingPayment.value = true
   try {
     await new Promise((resolve) => setTimeout(resolve, 1500))
-    showPayment.value = false
-    showSuccess.value = false
-    paymentComplete.value = true
+    router.push('/success')
   } catch (error) {
     console.error('Error processing bank transfer:', error)
     alert('Failed to process bank transfer. Please try again.')

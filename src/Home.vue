@@ -6,6 +6,7 @@ import FeaturesSection from './components/sections/FeaturesSection.vue'
 import RequestFormStep1 from './components/forms/RequestFormStep1.vue'
 import RequestFormBusinessStep2 from './components/forms/RequestFormBusinessStep2.vue'
 import RequestFormBusinessStep3 from './components/forms/RequestFormBusinessStep3.vue'
+import ProductStackSection from './components/sections/ProductStackSection.vue'
 import CommitmentSection from './components/sections/CommitmentSection.vue'
 import TestimonialsSection from './components/sections/TestimonialsSection.vue'
 import PartnersSection from './components/sections/PartnersSection.vue'
@@ -71,6 +72,7 @@ const handleStep3Next = (stepData) => {
       @prev-step="handleStep3Prev"
       @next-step="handleStep3Next"
     />
+    <ProductStackSection />
     <CommitmentSection id="commitment" />
     <TestimonialsSection id="testimonials" />
     <PartnersSection id="partners" />

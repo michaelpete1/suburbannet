@@ -1,0 +1,2 @@
+- [x] Remove "Managed Network Security" card from ManagedServicesPage.vue
+- [x] Remove "Infrastructure Build & Operations" card from ManagedServicesPage.vue
