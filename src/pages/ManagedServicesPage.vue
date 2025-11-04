@@ -1,5 +1,5 @@
 <template>
-  <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
     <!-- Navbar Component -->
     <Navbar />
 
@@ -20,13 +20,13 @@
         <div>
           <h3 class="text-2xl font-bold text-slate-800 mb-4">Technical Support</h3>
           <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            Getting a skilled professional is difficult and when you find one, often too expensive, but you still need them for your business. With the lowest market rate and highly skilled and professional delivery of services, we attend to your business technology needs. We provide technical support for the full spectrum of your business I.T needs.
+            Getting a skilled professional is difficult and when you find one, often too expensive, but you still need them for your business. With the lowest market rate and highly skilled and professional delivery of services, we attend to your business technology needs. We provide technical support for the full spectrum of your I.T needs.
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-managed-red">
+          <RouterLink :to="{ path: '/', hash: '#request-form' }" class="btn-managed-red" @click="setProduct('Managed Services')">
             Request Services
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -41,9 +41,9 @@
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-managed-red">
+          <RouterLink :to="{ path: '/', hash: '#request-form' }" class="btn-managed-red" @click="setProduct('Managed Services')">
             Request Services
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -72,7 +72,15 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import Navbar from '../components/sections/Navbar.vue'
+
+const router = useRouter()
+
+const setProduct = (product) => {
+  // Store the selected product in sessionStorage or localStorage
+  sessionStorage.setItem('selectedProduct', product)
+}
 
 // Define the classes for the hero banner gradient to match the image closely
 const gradientClasses = computed(() => {
