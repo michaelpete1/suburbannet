@@ -1,11 +1,7 @@
 <template>
-  <div class="font-graphik pt-20 bg-gray-50 min-h-screen">
-
+  <div class="font-graphik bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <button @click="router.back()" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-900 mb-6">
-        <span aria-hidden="true" class="mr-2">←</span>
-        Back
-      </button>
+      <BackButton class="mb-6" />
 
     </div>
 
@@ -19,7 +15,7 @@
         <div class="bg-red-600 rounded-xl shadow-2xl p-8 lg:p-12 text-white flex flex-col justify-between">
           <div>
             <h2 class="text-2xl font-bold mb-4">Suburban Business WiFi</h2>
-            <p class="text-lg opacity-90 leading-relaxed mb-6">
+            <p class="text-xl opacity-90 leading-relaxed mb-6">
              Suburban’s Business WiFi is a managed, secure, high-performance wireless solution designed for multi-location business sites and SMBs. Backed by cloud-based management systems and expert support, our WiFi keeps your operations seamless.
 
 When day-to-day operations depend on constant connectivity, your WiFi must be the last thing you worry about. Suburban’s Business WiFi ensures consistent, secure wireless access so your team and customers can connect, collaborate, and operate without interruption.
@@ -92,9 +88,7 @@ Let Suburban handle the heavy lifting so your network just works. Contact us tod
 
 <script setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import BackButton from '../components/BackButton.vue'
 
 const logos = [
 

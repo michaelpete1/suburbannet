@@ -167,16 +167,16 @@
             >
               <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
               <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
-              <div class="px-8 py-4">
+              <div class="px-8 py-6">
                 <div class="relative overflow-hidden">
-                  <div class="sponsor-marquee" :style="{ '--gap': '2.5rem' }">
+                  <div class="sponsor-marquee" :style="{ '--gap': '3rem' }">
                     <div class="sponsor-track" :key="currentSlide.id + '-track-1'">
                       <img
                         v-for="sponsor in currentSlide.sponsors"
                         :key="currentSlide.id + '-track-1-' + sponsor.alt"
                         :src="sponsor.src"
                         :alt="sponsor.alt"
-                        class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                        class="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition"
                       />
                     </div>
                     <div class="sponsor-track" :key="currentSlide.id + '-track-2'">
@@ -185,7 +185,7 @@
                         :key="currentSlide.id + '-track-2-' + sponsor.alt"
                         :src="sponsor.src"
                         :alt="sponsor.alt"
-                        class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                        class="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition"
                       />
                     </div>
                   </div>
@@ -368,8 +368,9 @@ const submitStep1 = () => {
   position: relative;
   display: flex;
   width: max-content;
-  gap: var(--gap, 2.5rem);
-  animation: sponsor-scroll 14s linear infinite;
+  gap: var(--gap, 3rem);
+  animation: sponsor-scroll 20s linear infinite;
+  padding: 0.5rem 0;
 }
 
 .animate-fade {

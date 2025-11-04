@@ -58,7 +58,6 @@ const handleStep3Next = (stepData) => {
 
 <template>
   <div class="relative w-full min-h-screen bg-white antialiased overflow-x-hidden">
-    <Navbar />
     <HeaderHero id="home" />
     <FeaturesSection id="features" />
     <RequestFormStep1 v-if="currentStep === 1" id="request-form" @next-step="handleStep1Next" />

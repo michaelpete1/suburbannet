@@ -1,42 +1,28 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <Navbar />
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       <!-- Hero Section -->
-      <section class="relative bg-gradient-to-br from-white via-pink-50 to-rose-50 rounded-3xl p-4 sm:p-6 lg:p-8 md:p-12 shadow-xl overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-pink-500/5"></div>
-        <div class="relative max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full mb-4 sm:mb-6">
-            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+      <section class="relative bg-white rounded-3xl p-4 sm:p-6 lg:p-8 md:p-12 shadow-xl overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="space-y-6">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Powering Connectivity.<br/>
+              Enabling Possibility.
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              We are redefining connectivity across Africa, delivering high-speed, low-latency fiber solutions that power homes, businesses, and communities.
+            </p>
           </div>
-          <span class="text-xs sm:text-sm font-semibold tracking-widest text-red-600 uppercase">About Us</span>
-          <h1 class="mt-2 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Powering Connectivity.<br class="hidden sm:block">Enabling Possibility.</h1>
-          <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 lg:px-0">
-            We are redefining connectivity across Africa, delivering high-speed, low-latency fiber solutions that power homes, businesses, and communities.
-          </p>
-          <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <RouterLink
-              to="/solutions"
-              class="group px-6 sm:px-8 py-2 sm:py-3 bg-red-600 text-white font-medium rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
-            >
-              Explore Solutions
-              <svg class="inline-block w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </RouterLink>
-            <RouterLink
-              to="/contact"
-              class="px-6 sm:px-8 py-2 sm:py-3 bg-white text-red-600 font-medium rounded-full border-2 border-red-200 shadow hover:bg-red-50 hover:border-red-300 transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
-            >
-              Request Service
-            </RouterLink>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-48 object-cover rounded-xl shadow-lg"/>
+              <img src="/logos/CEO.png" alt="Female technician" class="w-full h-48 object-cover rounded-xl shadow-lg"/>
+            </div>
+            <div class="space-y-4 mt-8">
+              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+            </div>
           </div>
         </div>
-        <!-- Decorative elements -->
-        <div class="absolute top-4 sm:top-8 right-4 sm:right-8 w-20 h-20 sm:w-32 sm:h-32 bg-red-100 rounded-full opacity-20"></div>
-        <div class="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 w-16 h-16 sm:w-24 sm:h-24 bg-pink-100 rounded-full opacity-20"></div>
       </section>
 
       <!-- Timeline Section -->
@@ -56,8 +42,7 @@
               <div
                 v-for="(item, index) in timeline"
                 :key="item.year"
-                @click="activeTimeline = index"
-                @keydown.enter="activeTimeline = index"
+                @mouseover="activeTimeline = index"
                 :class="{
                   'scale-110': activeTimeline === index,
                   'opacity-75 hover:opacity-100': activeTimeline !== index
@@ -124,7 +109,7 @@
       </section>
 
       <!-- Values Section -->
-      <section class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-3xl p-4 sm:p-6 lg:p-8 text-white shadow-xl">
+      <section class="bg-[#012635] rounded-3xl p-4 sm:p-6 lg:p-8 text-white shadow-xl">
         <div class="max-w-5xl mx-auto">
           <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
             <div class="bg-white bg-opacity-20 p-4 sm:p-6 rounded-2xl backdrop-blur-sm">
@@ -210,7 +195,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import Navbar from '../components/sections/Navbar.vue'
 import Footer from '../components/sections/Footer.vue'
 
 const timeline = [

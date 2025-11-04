@@ -1,9 +1,19 @@
-<template>
+e <template>
   <div class="font-graphik bg-white min-h-screen">
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="mb-8">
-        <p class="text-sm text-red-600">Step 2 of 3</p>
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900">Nigeria's Sovereign Cloud for a <span class="text-red-600">Digital Africa</span></h1>
+        <div class="flex items-center text-red-600 font-semibold mb-6 space-x-3">
+          <button
+            type="button"
+            class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-red-200 text-red-600 hover:bg-red-50 transition"
+            @click="goBack"
+            aria-label="Go back to previous step"
+          >
+            <span aria-hidden="true">&larr;</span>
+          </button>
+          <span class="text-sm">Step 2 of 3</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900">Choose Your Business WiFi <span class="text-red-600">Plan</span></h1>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -154,6 +164,10 @@ const continueWithPlan = () => {
   window.dispatchEvent(e)
   // Navigate to step 3
   window.location.href = '/business-wifi-step-3'
+}
+
+const goBack = () => {
+  window.location.href = '/business-wifi'
 }
 
 const logos = [

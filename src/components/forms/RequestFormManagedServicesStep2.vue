@@ -1,5 +1,5 @@
 <template>
-  <section id="request-form-step-2" class="bg-white font-sans mt-20">
+  <section id="request-form-step-2" class="bg-white font-sans">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-20">
       <!-- Header -->
       <div class="flex items-center text-red-600 font-semibold mb-6 space-x-3">
@@ -100,39 +100,39 @@
 
           <!-- Right: Carousel -->
           <aside class="hidden lg:block">
-            <div class="relative overflow-hidden rounded-2xl bg-cover bg-center min-h-[520px]" style="background-image: url('/logos/BG Frame.png');">
+            <div class="relative overflow-hidden rounded-2xl bg-cover bg-center min-h-[550px]" style="background-image: url('/logos/BG Frame.png');">
               <div class="absolute inset-0 bg-black/30 animate-fade"></div>
-              <div class="absolute inset-0 flex flex-col items-center justify-end gap-8 p-8 text-white"
+              <div class="absolute inset-0 flex flex-col items-center justify-end gap-4 p-6 text-white"
                 @mouseenter="pauseCarousel"
                 @mouseleave="resumeCarousel">
-                <div class="w-full max-w-[440px] flex-grow flex items-end justify-center">
+                <div class="w-full max-w-[320px] flex-grow flex items-end justify-center">
                   <Transition name="soft-fade" mode="out-in">
                     <picture :key="currentSlide.id + '-image'">
                       <source :srcset="currentSlide.image.desktop" media="(min-width: 1024px)" />
                       <img
                         :src="currentSlide.image.mobile"
                         :alt="currentSlide.image.alt"
-                        class="w-full h-auto max-h-[420px] rounded-3xl border border-white/40 shadow-2xl shadow-black/30 object-contain bg-white/10"
+                        class="w-full h-auto max-h-[280px] rounded-2xl border border-white/40 shadow-xl shadow-black/30 object-contain bg-white/10"
                         loading="lazy"
                       />
                     </picture>
                   </Transition>
                 </div>
 
-                <div class="w-[calc(100%+4rem)] -mx-8">
+                <div class="w-[calc(100%+2rem)] -mx-4">
                   <div :key="currentSlide.id + '-sponsors'" class="relative overflow-hidden rounded-none bg-white border border-white/60 shadow-lg">
-                    <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-                    <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
-                    <div class="px-8 py-4">
+                    <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+                    <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+                    <div class="px-6 py-4">
                       <div class="relative overflow-hidden">
-                        <div class="sponsor-marquee" :style="{ '--gap': '2.5rem' }">
+                        <div class="sponsor-marquee" :style="{ '--gap': '2rem' }">
                           <div class="sponsor-track" :key="currentSlide.id + '-track-1'">
                             <img
                               v-for="sponsor in currentSlide.sponsors"
                               :key="currentSlide.id + '-track-1-' + sponsor.alt"
                               :src="sponsor.src"
                               :alt="sponsor.alt"
-                              class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                              class="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300"
                             />
                           </div>
                           <div class="sponsor-track" :key="currentSlide.id + '-track-2'">
@@ -141,7 +141,7 @@
                               :key="currentSlide.id + '-track-2-' + sponsor.alt"
                               :src="sponsor.src"
                               :alt="sponsor.alt"
-                              class="h-8 w-auto opacity-90 hover:opacity-100 transition"
+                              class="h-6 w-auto opacity-90 hover:opacity-100 transition"
                             />
                           </div>
                         </div>
@@ -151,18 +151,18 @@
                 </div>
 
                 <Transition name="soft-fade" mode="out-in">
-                  <div class="text-center pb-4" :key="currentSlide.id + '-copy'">
-                    <h3 class="text-3xl font-bold mb-3">{{ currentSlide.title }}</h3>
-                    <p class="text-lg opacity-90">{{ currentSlide.description }}</p>
-                    <div class="flex justify-center mt-6 space-x-2">
+                  <div class="text-center pb-2" :key="currentSlide.id + '-copy'">
+                    <h3 class="text-xl font-bold mb-2">{{ currentSlide.title }}</h3>
+                    <p class="text-sm opacity-90">{{ currentSlide.description }}</p>
+                    <div class="flex justify-center mt-4 space-x-2">
                       <button
                         v-for="(slide, index) in carouselSlides"
                         :key="slide.id"
                         type="button"
                         :aria-label="'Go to slide ' + (index + 1)"
                         @click="goToSlide(index)"
-                        class="w-2.5 h-2.5 rounded-full transition-all duration-300 ease-in-out"
-                        :class="index === activeSlide ? 'bg-white w-6' : 'bg-white/40'"
+                        class="w-2 h-2 rounded-full transition-all duration-300 ease-in-out"
+                        :class="index === activeSlide ? 'bg-white w-5' : 'bg-white/40'"
                       ></button>
                     </div>
                   </div>
@@ -187,17 +187,7 @@
           </aside>
         </div>
 
-        <!-- trust logos row -->
-        <div class="mt-10 border-t border-gray-100 pt-8">
-          <div class="max-w-5xl mx-auto">
-            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider text-center mb-6">THEY CHOOSE SUBURBAN</h3>
-            <div class="overflow-x-auto hide-scrollbar">
-              <div class="flex space-x-8 pb-4 animate-scroll">
-                <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-6 flex-shrink-0 opacity-60 hover:opacity-100 transition" />
-              </div>
-            </div>
-          </div>
-        </div>
+
     </div>
   </section>
 </template>
@@ -384,8 +374,9 @@ const trackLogos = computed(() => [...logos, ...logos])
   position: relative;
   display: flex;
   width: max-content;
-  gap: var(--gap, 2.5rem);
-  animation: sponsor-scroll 14s linear infinite;
+  gap: var(--gap, 3rem);
+  animation: sponsor-scroll 20s linear infinite;
+  padding: 0.5rem 0;
 }
 
 .animate-fade {

@@ -1,4 +1,4 @@
-<template>
+sent <template>
   <section id="request-form-step-3" class="bg-white font-sans">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-20 relative">
       <!-- Back button and step indicator -->
@@ -533,7 +533,7 @@ watch(selectedState, (newState) => {
 const formatCurrency = (value) => `₦${Number(value).toLocaleString('en-NG')}`
 
 const goBack = () => {
-  router.push('/business-wifi')
+  router.push('/business-wifi-step-2')
 }
 
 const verifyAddress = () => {

@@ -1,11 +1,7 @@
-<template>
-  <div class="font-graphik pt-20 bg-gray-50 min-h-screen">
-
+ <template>
+  <div class="font-graphik bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <button @click="router.back()" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-900 mb-6">
-        <span aria-hidden="true" class="mr-2">←</span>
-        Back
-      </button>
+      <BackButton class="mb-6" />
 
     </div>
 
@@ -19,10 +15,10 @@
         <div class="bg-red-600 rounded-xl shadow-2xl p-8 lg:p-12 text-white flex flex-col justify-between">
           <div>
             <h2 class="text-2xl font-bold mb-4">Suburban Business Internet</h2>
-            <p class="text-lg opacity-90 leading-relaxed mb-6">
+            <p class="text-xl opacity-90 leading-relaxed mb-6">
               Connect to Suburban’s Internet solutions built for businesses and subscription plans designed for value. We offer dedicated, high-capacity fiber optic network and scalable data services, for efficient delivery of Internet and phone solutions. With a robust network that forms the basis of our fiber optic Internet services and other Internet-based services for small, mid-market, and enterprise-level businesses.
             </p>
-            <p class="text-lg opacity-90 leading-relaxed">
+            <p class="text-xl opacity-90 leading-relaxed">
               Our internet is built for optimal business performance to keep your business applications running smoothly and everyone in your organization connected with one robust and secure network. With Suburban Internet, you’ll exchange data safely and securely, up to 150Mbps.
             </p>
           </div>
@@ -90,9 +86,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import BackButton from '../components/BackButton.vue'
 
 const logos = [
   '/logos/cbn.png',

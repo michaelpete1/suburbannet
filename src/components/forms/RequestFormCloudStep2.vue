@@ -2,6 +2,7 @@
   <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
 
     <div class="max-w-7xl mx-auto mb-12">
+      <BackButton class="mb-4" />
       <p class="text-gray-600 text-sm font-semibold mb-2">
         <span class="text-red-600">●</span> Step 2 of 3
       </p>
@@ -13,36 +14,37 @@
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-      <div class="service-card">
+      <div class="service-card" @click="selectService('email-hosting')" :class="{ 'ring-2 ring-red-500': selectedService === 'email-hosting' }">
         <span class="service-tag">Suburban Cloud</span>
         <h3 class="card-title">Email Hosting</h3>
         <p class="card-description">
           Professional, secure email for your business domain. Stay connected with enterprise-grade reliability and zero downtime.
         </p>
         <div class="mt-auto">
-          <a href="#" class="btn-card-primary">Setup Email</a>
+          <button class="btn-card-primary" @click.stop="selectService('email-hosting')">Setup Email</button>
         </div>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" @click="selectService('dedicated-vps')" :class="{ 'ring-2 ring-red-500': selectedService === 'dedicated-vps' }">
         <span class="service-tag">Suburban Cloud</span>
         <h3 class="card-title">Dedicated VPS</h3>
         <p class="card-description">
           High-performance virtual servers with full control and scalability. Perfect for developers, enterprises, and mission-critical workloads.
         </p>
         <div class="mt-auto">
-          <a href="#" class="btn-card-primary">Deploy Now</a>
+          <button class="btn-card-primary" @click.stop="selectService('dedicated-vps')">Deploy Now</button>
         </div>
       </div>
 
-      <div class="service-card">
+
+      <div class="service-card" @click="selectService('shared-hosting')" :class="{ 'ring-2 ring-red-500': selectedService === 'shared-hosting' }">
         <span class="service-tag bg-red-100 text-red-600">Suburban Cloud</span>
         <h3 class="card-title">Shared Hosting</h3>
         <p class="card-description">
           Reliable, secure, and affordable web hosting for startups and small businesses. Get your website live in minutes.
         </p>
         <div class="mt-auto">
-          <a href="#" class="btn-card-primary">Get Started</a>
+          <button class="btn-card-primary" @click.stop="selectService('shared-hosting')">Get Started</button>
         </div>
       </div>
 
@@ -115,8 +117,19 @@
     </div>
 
     <div class="max-w-7xl mx-auto mt-16 text-center">
-      <button class="bg-red-600 text-white font-bold py-4 px-12 rounded-full shadow-lg hover:bg-red-700 transition duration-150 ease-in-out text-xl">
-        Request Personal Assistance
+      <button
+        v-if="selectedService"
+        @click="continueToStep3"
+        class="bg-red-600 text-white font-bold py-4 px-12 rounded-full shadow-lg hover:bg-red-700 transition duration-150 ease-in-out text-xl"
+      >
+        Continue
+      </button>
+      <button
+        v-else
+        class="bg-gray-400 text-white font-bold py-4 px-12 rounded-full shadow-lg cursor-not-allowed text-xl"
+        disabled
+      >
+        Select a Service to Continue
       </button>
     </div>
 
@@ -124,7 +137,22 @@
 </template>
 
 <script setup>
-// No specific script logic needed for this static page.
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import BackButton from '../BackButton.vue'
+
+const router = useRouter()
+const selectedService = ref('')
+
+const selectService = (service) => {
+  selectedService.value = service
+}
+
+const continueToStep3 = () => {
+  if (selectedService.value) {
+    router.push('/cloud-services-step-3')
+  }
+}
 </script>
 
 <style scoped>

@@ -1,6 +1,5 @@
 <template>
   <div class="privacy-policy">
-    <Navbar />
     <header class="hero">
       <div class="hero__inner">
         <div class="hero__card">
@@ -58,7 +57,6 @@
 
 <script setup>
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import Navbar from '../components/sections/Navbar.vue'
 import Footer from '../components/sections/Footer.vue'
 
 const sections = [
@@ -443,7 +441,7 @@ onBeforeUnmount(() => {
               radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
 }
 .hero__inner {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -453,7 +451,7 @@ onBeforeUnmount(() => {
 }
 .hero__card {
   width: 100%;
-  max-width: 880px;
+  max-width: 1200px;
   border-radius: clamp(1.75rem, 3.5vw, 2.5rem);
   background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
   box-shadow: 0 32px 64px rgba(220, 38, 38, 0.25), 0 16px 32px rgba(239, 68, 68, 0.15);

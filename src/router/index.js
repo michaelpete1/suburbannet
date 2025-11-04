@@ -23,7 +23,8 @@ const router = createRouter({
     {
       path: '/managed-services',
       name: 'managed-services',
-      component: () => import('../pages/ManagedServicesPage.vue')
+      component: () => import('../pages/ManagedServicesPage.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/privacy-policy',
@@ -38,22 +39,26 @@ const router = createRouter({
     {
       path: '/business-internet',
       name: 'business-internet',
-      component: () => import('../pages/BusinessInternetPage.vue')
+      component: () => import('../pages/BusinessInternetPage.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/business-wifi',
       name: 'business-wifi',
-      component: () => import('../pages/BusinessWifiPage.vue')
+      component: () => import('../pages/BusinessWifiPage.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/business-voice',
       name: 'business-voice',
-      component: () => import('../pages/BusinessVoicePage.vue')
+      component: () => import('../pages/BusinessVoicePage.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/infrastructure',
       name: 'infrastructure',
-      component: () => import('../pages/InfrastructurePage.vue')
+      component: () => import('../pages/InfrastructurePage.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/success',
@@ -68,22 +73,26 @@ const router = createRouter({
     {
       path: '/cloud-services-step-2',
       name: 'cloud-services-step-2',
-      component: () => import('../components/forms/RequestFormCloudStep2.vue')
+      component: () => import('../components/forms/RequestFormCloudStep2.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/cloud-services-step-3',
       name: 'cloud-services-step-3',
-      component: () => import('../components/forms/RequestFormCloudStep3.vue')
+      component: () => import('../components/forms/RequestFormCloudStep3.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/business-wifi-step-2',
       name: 'business-wifi-step-2',
-      component: () => import('../components/forms/RequestFormBusinessWifiStep2.vue')
+      component: () => import('../components/forms/RequestFormBusinessWifiStep2.vue'),
+      meta: { hideNavbar: true }
     },
     {
       path: '/business-wifi-step-3',
       name: 'business-wifi-step-3',
-      component: () => import('../components/forms/RequestFormBusinessWifiStep3.vue')
+      component: () => import('../components/forms/RequestFormBusinessWifiStep3.vue'),
+      meta: { hideNavbar: true }
     },
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -143,7 +143,7 @@
         <div class="lg:order-2 animate-slide-in-right">
           <div class="relative group">
             <div class="image-container rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
-              <img src="/logos/About Image.png" alt="Managed Services" class="w-full h-full object-cover">
+              <img src="/logos/About Image.png" alt="Managed Services" class="w-full h-full object-contain scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-green-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                 <div class="text-white text-center">
                   <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

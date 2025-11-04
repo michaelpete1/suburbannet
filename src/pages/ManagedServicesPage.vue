@@ -1,11 +1,7 @@
 <template>
-  <div class="font-graphik pt-20 py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
-
+  <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <button @click="router.back()" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-900 mb-6">
-        <span aria-hidden="true" class="mr-2">←</span>
-        Back
-      </button>
+      <BackButton class="mb-6" />
     </div>
 
     <div class="max-w-6xl mx-auto rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl"
@@ -57,18 +53,18 @@
     </div>
 
     <!-- Partners Carousel -->
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 mt-16">
-      <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider text-center mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 mb-20">
+      <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider text-center mb-12">
         THEY CHOOSE SUBURBAN
       </h3>
-      <div class="overflow-x-auto scrollbar-hide">
-        <div class="flex space-x-8 pb-4 animate-scroll">
-          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-12 flex-shrink-0 opacity-70 hover:opacity-100 transition">
+      <div class="relative w-full overflow-hidden py-12">
+        <div class="flex items-center justify-center space-x-16 animate-scroll">
+          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-14 w-auto object-contain flex-shrink-0 opacity-70 hover:opacity-100 transition duration-300">
         </div>
       </div>
     </div>
 
-    <div class="text-center py-4 text-xs text-gray-500 border-t border-gray-100 mt-10">
+    <div class="text-center py-4 text-xs text-gray-500 border-t border-gray-100">
       <p>Suburban © 2025. All rights reserved.</p>
     </div>
 
@@ -77,9 +73,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import BackButton from '../components/BackButton.vue'
 
 const setProduct = (product) => {
   // Store the selected product in sessionStorage or localStorage
@@ -165,12 +159,13 @@ const trackLogos = computed(() => [...logos, ...logos])
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 3rem)); /* Adjust for spacing between duplicated sets */
   }
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
+  min-width: max-content;
 }
 
 /* Ensure Graphik is used if not set globally */
