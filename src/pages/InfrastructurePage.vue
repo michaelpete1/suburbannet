@@ -1,7 +1,12 @@
 <template>
-  <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-    <!-- Navbar Component -->
-    <Navbar />
+  <div class="font-graphik pt-20 py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <button @click="router.back()" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-900 mb-6">
+        <span aria-hidden="true" class="mr-2">←</span>
+        Back
+      </button>
+    </div>
 
     <div class="max-w-6xl mx-auto rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl"
          :class="gradientClasses">
@@ -98,7 +103,9 @@
 
 <script setup>
 import { computed } from 'vue'
-import Navbar from '../components/sections/Navbar.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // Define the classes for the hero banner gradient to match the image closely
 const gradientClasses = computed(() => {

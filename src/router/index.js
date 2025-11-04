@@ -71,9 +71,19 @@ const router = createRouter({
       component: () => import('../components/forms/RequestFormCloudStep2.vue')
     },
     {
+      path: '/cloud-services-step-3',
+      name: 'cloud-services-step-3',
+      component: () => import('../components/forms/RequestFormCloudStep3.vue')
+    },
+    {
       path: '/business-wifi-step-2',
       name: 'business-wifi-step-2',
       component: () => import('../components/forms/RequestFormBusinessWifiStep2.vue')
+    },
+    {
+      path: '/business-wifi-step-3',
+      name: 'business-wifi-step-3',
+      component: () => import('../components/forms/RequestFormBusinessWifiStep3.vue')
     },
   ],
   scrollBehavior(to, from, savedPosition) {

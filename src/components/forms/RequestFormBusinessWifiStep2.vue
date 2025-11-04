@@ -10,9 +10,14 @@
         <article
           v-for="plan in plans"
           :key="plan.id"
-          class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative"
+          class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative hover:shadow-xl cursor-pointer"
+          @click="selectPlan(plan.id)"
+          :class="selectedPlan === plan.id ? 'ring-2 ring-red-200' : ''"
+          role="button"
+          tabindex="0"
+          @keydown.enter.prevent="selectPlan(plan.id)"
+          @keydown.space.prevent="selectPlan(plan.id)"
         >
-          <label class="absolute inset-0 cursor-pointer" :for="plan.id"></label>
           <div class="flex items-start justify-between">
             <div>
               <h3 class="text-2xl font-extrabold text-gray-900">{{ plan.users }} Users</h3>
@@ -27,40 +32,67 @@
           <div class="mt-4 space-y-3">
             <div>
               <label class="text-xs text-gray-500">Access Points</label>
-              <select v-model="selections[plan.id].accessPoints" class="w-full mt-2 rounded-lg border border-gray-200 px-3 py-2 text-sm">
-                <option v-for="n in [1,2,3,4]" :key="n" :value="n">{{ n }}</option>
-              </select>
+              <div class="select-with-icon mt-2">
+                <select v-model="selections[plan.id].accessPoints" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm" @click.stop @keydown.stop>
+                  <option v-for="n in [1,2,3,4]" :key="n" :value="n">{{ n }}</option>
+                </select>
+                <svg class="select-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 8L10 12L14 8" stroke="#374151" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
 
             <div>
               <label class="text-xs text-gray-500">Select Duration</label>
-              <select v-model="selections[plan.id].duration" class="w-full mt-2 rounded-lg border border-gray-200 px-3 py-2 text-sm">
-                <option value="1 Month">1 Month</option>
-                <option value="3 Months">3 Months</option>
-                <option value="12 Months">12 Months</option>
-              </select>
+              <div class="select-with-icon mt-2">
+                <select v-model="selections[plan.id].duration" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm" @click.stop @keydown.stop>
+                  <option value="1 Month">1 Month</option>
+                  <option value="3 Months">3 Months</option>
+                  <option value="12 Months">12 Months</option>
+                </select>
+                <svg class="select-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 8L10 12L14 8" stroke="#374151" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
 
             <div>
               <label class="text-xs text-gray-500">Add Bundled Service</label>
-              <select v-model="selections[plan.id].bundle" class="w-full mt-2 rounded-lg border border-gray-200 px-3 py-2 text-sm">
-                <option value="Tier 1 VPS Hosting">Tier 1 VPS Hosting</option>
-                <option value="Tier 2 Managed Firewall">Tier 2 Managed Firewall</option>
-                <option value="No Bundle">No Bundle</option>
-              </select>
+              <div class="select-with-icon mt-2">
+                <select v-model="selections[plan.id].bundle" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm" @click.stop @keydown.stop>
+                  <option value="Tier 1 VPS Hosting">Tier 1 VPS Hosting</option>
+                  <option value="Tier 2 Managed Firewall">Tier 2 Managed Firewall</option>
+                  <option value="No Bundle">No Bundle</option>
+                </select>
+                <svg class="select-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 8L10 12L14 8" stroke="#374151" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
           </div>
 
+          <!-- radio bound to the plan id so label clicks work natively -->
+          <input type="radio" :id="plan.id" name="selectedPlan" class="hidden" v-model="selectedPlan" :value="plan.id" />
+
+          <!-- details panel - appears when this plan is selected -->
           <div class="mt-6">
-            <input type="radio" :id="plan.id" name="selectedPlan" class="hidden" v-model="selectedPlan" :value="plan.id" />
-            <button @click.prevent="selectPlan(plan.id)" :class="['w-full rounded-full py-3 text-white font-semibold transition', selectedPlan === plan.id ? 'bg-red-700' : 'bg-red-600 hover:bg-red-700']" @click="selectPlan(plan.id)">Select</button>
+            <div v-show="openDetailsId === plan.id" class="space-y-4">
+              <p class="text-sm text-gray-600">{{ plan.description }}</p>
+              <div class="flex gap-3">
+                <button type="button" @click.stop="continueWithPlan" class="flex-1 rounded-full bg-red-600 py-3 text-white font-semibold hover:bg-red-700">Continue</button>
+                <button type="button" @click.stop="selectedPlan = '' ; openDetailsId = ''" class="px-4 py-3 rounded-full border">Cancel</button>
+              </div>
+            </div>
+
+            <!-- fallback select button when panel is not open -->
+            <div v-show="openDetailsId !== plan.id">
+              <button type="button" @click.stop="selectAndContinue(plan.id)" :class="['w-full rounded-full py-3 text-white font-semibold transition', selectedPlan === plan.id ? 'bg-red-700' : 'bg-red-600 hover:bg-red-700']">Select</button>
+            </div>
           </div>
         </article>
       </div>
 
-      <div class="mt-10 max-w-3xl">
-        <button :disabled="!selectedPlan" @click="continueWithPlan" class="w-full rounded-full bg-red-600 py-3 text-lg font-bold text-white shadow-lg hover:bg-red-700 disabled:opacity-60 disabled:cursor-not-allowed transition">Continue</button>
-      </div>
+
     </main>
 
     <!-- Partners Carousel (reuse markup from pages) -->
@@ -79,15 +111,15 @@
 import { reactive, ref, computed } from 'vue'
 
 const plans = ref([
-  { id: 'p3', users: 3, price: '₦10,850' },
-  { id: 'p5', users: 5, price: '₦16,850' },
-  { id: 'p6', users: 6, price: '₦10,850' },
-  { id: 'p8', users: 8, price: '₦30,850' },
-  { id: 'p10', users: 10, price: '₦37,850' },
-  { id: 'p12', users: 12, price: '₦10,850' },
-  { id: 'p17', users: 17, price: '₦66,850' },
-  { id: 'p22', users: 22, price: '₦86,850' },
-  { id: 'p32', users: 32, price: '₦127,850' }
+  { id: 'p3', users: 3, price: '₦10,850', description: 'Small office kit: basic coverage, ideal for micro-offices.' },
+  { id: 'p5', users: 5, price: '₦16,850', description: 'Starter pack: good for small teams with medium traffic.' },
+  { id: 'p6', users: 6, price: '₦10,850', description: 'Compact plan for light workloads and guest access.' },
+  { id: 'p8', users: 8, price: '₦30,850', description: 'Balanced plan with more APs for larger rooms.' },
+  { id: 'p10', users: 10, price: '₦37,850', description: 'Office plan for steady user counts and higher throughput.' },
+  { id: 'p12', users: 12, price: '₦10,850', description: 'Larger team plan with better coverage and redundancy.' },
+  { id: 'p17', users: 17, price: '₦66,850', description: 'Enterprise-lite: for teams with higher device density.' },
+  { id: 'p22', users: 22, price: '₦86,850', description: 'Enterprise plan suited for multiple meeting rooms and heavy traffic.' },
+  { id: 'p32', users: 32, price: '₦127,850', description: 'Full-office deployment with advanced features and support.' }
 ])
 
 const selections = reactive({})
@@ -96,9 +128,16 @@ plans.value.forEach(p => {
 })
 
 const selectedPlan = ref('')
+const openDetailsId = ref('')
 
 const selectPlan = (id) => {
   selectedPlan.value = id
+  openDetailsId.value = id
+}
+
+const selectAndContinue = (id) => {
+  selectPlan(id)
+  continueWithPlan()
 }
 
 const continueWithPlan = () => {
@@ -113,6 +152,8 @@ const continueWithPlan = () => {
   // For compatibility with other request-form components, emit via custom event
   const e = new CustomEvent('business-wifi-step2-complete', { detail: payload })
   window.dispatchEvent(e)
+  // Navigate to step 3
+  window.location.href = '/business-wifi-step-3'
 }
 
 const logos = [
@@ -136,4 +177,9 @@ const trackLogos = computed(() => [...logos, ...logos])
 
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .animate-scroll { animation: scroll 30s linear infinite; }
+
+/* custom select wrapper with right chevron */
+.select-with-icon { position: relative; }
+.select-with-icon select { appearance: none; -webkit-appearance: none; padding-right: 2.25rem; }
+.select-with-icon .select-icon { position: absolute; right: 0.6rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
 </style>

@@ -17,7 +17,7 @@
 
       <div class="max-w-3xl">
         <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
-          Power your Business with — <span class="text-red-600">reliable WiFi</span>
+          Secure your Cloud Services with — <span class="text-red-600">Suburban Cloud</span>
         </h2>
       </div>
 
@@ -28,13 +28,13 @@
             <h3 class="text-lg font-semibold text-gray-900 mb-4">Confirm Your Details</h3>
             <div class="space-y-4">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2" for="location-name">Name of Plaza/Location</label>
+                <label class="block text-sm font-semibold text-gray-700 mb-2" for="location-name">Name of Organization</label>
                 <input
                   id="location-name"
-                  v-model="locationName"
+                  v-model="organizationName"
                   type="text"
                   class="w-full rounded-2xl border border-gray-200 px-5 py-4 text-sm text-gray-700 shadow-sm transition focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                  placeholder="Enter name"
+                  placeholder="Enter organization name"
                   required
                 />
               </div>
@@ -102,31 +102,19 @@
             <dl class="space-y-4 text-sm text-gray-700">
               <div class="flex justify-between">
                 <dt class="font-semibold text-gray-500">Product Name</dt>
-                <dd class="font-semibold text-gray-900">Business WiFi</dd>
+                <dd class="font-semibold text-gray-900">Cloud Services</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="font-semibold text-gray-500">Users</dt>
-                <dd class="font-semibold text-gray-900">{{ summaryData.users || '—' }}</dd>
-              </div>
-              <div class="flex justify-between">
-                <dt class="font-semibold text-gray-500">Access Points</dt>
-                <dd class="font-semibold text-gray-900">{{ summaryData.accessPoints || '—' }}</dd>
+                <dt class="font-semibold text-gray-500">Services Selected</dt>
+                <dd class="font-semibold text-gray-900">{{ summaryData.services || '—' }}</dd>
               </div>
               <div class="flex justify-between">
                 <dt class="font-semibold text-gray-500">Subscription Fee</dt>
                 <dd class="font-semibold text-gray-900">{{ summaryData.price || '₦0' }} / {{ summaryData.duration || 'Month' }}</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="font-semibold text-gray-500">Bundle</dt>
-                <dd class="font-semibold text-gray-900">{{ summaryData.bundle || 'No Bundle' }}</dd>
-              </div>
-              <div class="flex justify-between">
-                <dt class="font-semibold text-gray-500">Sub-total</dt>
-                <dd class="font-semibold text-gray-900">{{ formatCurrency(subTotalValue) }}</dd>
-              </div>
-              <div class="flex items-center justify-between">
-                <dt class="font-semibold text-gray-500">Installation Fees</dt>
-                <dd class="font-semibold text-gray-900">{{ formatCurrency(installationFeeValue) }}</dd>
+                <dt class="font-semibold text-gray-500">Setup Fee</dt>
+                <dd class="font-semibold text-gray-900">{{ formatCurrency(setupFeeValue) }}</dd>
               </div>
             </dl>
 
@@ -199,7 +187,7 @@
             </svg>
           </div>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Congratulations!</h2>
-          <p class="text-gray-600 mb-8">Suburban WiFi is available in your area. Complete your payment to get connected.</p>
+          <p class="text-gray-600 mb-8">Suburban Cloud Services are available in your area. Complete your payment to get started.</p>
           <button
             @click="() => { showPayment = true; showSuccess = false; paymentComplete = false }"
             class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-red-600 hover:bg-red-700 transition-colors duration-200"
@@ -383,10 +371,10 @@
               Go Home
             </router-link>
             <router-link
-              to="/business-wifi"
+              to="/business-internet"
               class="px-6 py-3 rounded-full bg-red-600 text-sm font-semibold text-white shadow-lg shadow-red-500/30 hover:bg-red-700 transition"
             >
-              Back to WiFi Page
+              Back to Cloud Services
             </router-link>
           </div>
         </div>
@@ -425,7 +413,7 @@ const props = defineProps({
 const emit = defineEmits(['prev-step', 'next-step'])
 
 // Form data with default values from props if available
-const locationName = ref(props.summaryData.locationName || props.summaryData.location || '')
+const organizationName = ref(props.summaryData.organizationName || props.summaryData.organization || '')
 const selectedState = ref(props.summaryData.state || 'Abuja FCT')
 const selectedLga = ref(props.summaryData.lga || '')
 const streetAddress = ref(props.summaryData.streetAddress || '')
@@ -495,10 +483,10 @@ const subTotalValue = computed(() => {
   const price = summaryData.value.price ? parseFloat(summaryData.value.price.replace('₦', '').replace(',', '')) : 0
   return price * monthsSelected.value
 })
-const installationFeeValue = computed(() => 50000) // Fixed installation fee for WiFi
+const setupFeeValue = computed(() => 25000) // Setup fee for cloud services
 
 const totalValue = computed(() =>
-  subTotalValue.value + installationFeeValue.value - discountApplied.value
+  subTotalValue.value + setupFeeValue.value - discountApplied.value
 )
 
 const totalAmount = computed(() => totalValue.value)
@@ -506,7 +494,7 @@ const totalAmount = computed(() => totalValue.value)
 const lgaOptions = computed(() => lgaMap[selectedState.value] || [])
 
 const addressPreview = computed(() => {
-  return [locationName.value, streetAddress.value, selectedLga.value, selectedState.value]
+  return [organizationName.value, streetAddress.value, selectedLga.value, selectedState.value]
     .filter(Boolean)
     .join(', ')
 })
@@ -515,7 +503,7 @@ watch(
   () => props.summaryData,
   (next) => {
     if (!next) return
-    locationName.value = next.locationName || next.location || ''
+    organizationName.value = next.organizationName || next.organization || ''
     selectedState.value = next.state || 'Abuja FCT'
     selectedLga.value = next.lga || ''
     streetAddress.value = next.streetAddress || ''
@@ -533,7 +521,7 @@ watch(selectedState, (newState) => {
 const formatCurrency = (value) => `₦${Number(value).toLocaleString('en-NG')}`
 
 const goBack = () => {
-  router.push('/business-wifi')
+  router.push('/cloud-services-step-2')
 }
 
 const verifyAddress = () => {

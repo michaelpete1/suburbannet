@@ -1,5 +1,5 @@
 <template>
-  <div class="py-16 px-4 sm:px-6 lg:px-8 font-graphik bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <div class="py-20 px-6 sm:px-8 lg:px-12 font-graphik bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute inset-0 opacity-5">
       <div class="absolute top-20 left-10 w-32 h-32 bg-red-200 rounded-full"></div>
@@ -21,9 +21,9 @@
       </p>
     </div>
 
-    <div class="max-w-7xl mx-auto space-y-32 relative z-10">
+    <div class="max-w-7xl mx-auto space-y-40 relative z-10">
       <!-- IaaS Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center animate-on-scroll">
         <div class="lg:order-1 animate-slide-in-left">
           <div class="inline-block px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-4">
             Infrastructure
@@ -60,10 +60,10 @@
       </div>
 
       <!-- Suburban Cloud Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-24 animate-on-scroll">
-        <div class="lg:order-1 flex gap-4 animate-slide-in-left h-96 -ml-4 xl:-ml-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-32 animate-on-scroll">
+        <div class="lg:order-1 flex gap-6 animate-slide-in-left h-96">
           <!-- Left side - Two square images stacked vertically -->
-          <div class="w-1/2 flex flex-col gap-4">
+          <div class="w-1/2 flex flex-col gap-6">
             <div class="h-1/2 image-container rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 relative group">
               <img src="/logos/CEO.png" alt="Suburban Cloud Team 1" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -88,7 +88,7 @@
             </div>
           </div>
           <!-- Right side - One larger image -->
-          <div class="w-1/3 h-full">
+          <div class="w-2/5 h-full">
             <div class="image-container h-full rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animation-delay-400 relative group">
               <img src="/logos/WOMANBLUE.png" alt="Suburban Cloud Meeting" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -122,7 +122,7 @@
       </div>
 
       <!-- Managed Services Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center animate-on-scroll">
         <div class="lg:order-1 animate-slide-in-left">
           <div class="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
             Management
@@ -252,8 +252,8 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .space-y-32 > * + * {
-    margin-top: 8rem;
+  .space-y-40 > * + * {
+    margin-top: 10rem;
   }
 
   .grid-cols-2 {
@@ -273,7 +273,28 @@
     grid-column: span 1;
   }
 
+  .gap-16 {
+    gap: 3rem;
+  }
 
+  .gap-6 {
+    gap: 1.5rem;
+  }
+
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 </style>
 

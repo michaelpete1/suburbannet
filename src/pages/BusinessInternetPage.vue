@@ -1,10 +1,15 @@
 <template>
-  <div class="font-graphik bg-gray-50 min-h-screen">
-    <!-- Navbar Component -->
-    <Navbar />
+  <div class="font-graphik pt-20 bg-gray-50 min-h-screen">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <button @click="router.back()" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-900 mb-6">
+        <span aria-hidden="true" class="mr-2">←</span>
+        Back
+      </button>
+
+    </div>
 
     <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <p class="text-red-600 mb-2 text-sm"><</p>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-10">
         Suburban Business <span class="text-red-600">Internet</span>
       </h1>
@@ -85,7 +90,9 @@
 
 <script setup>
 import { computed } from 'vue'
-import Navbar from '../components/sections/Navbar.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const logos = [
   '/logos/cbn.png',
