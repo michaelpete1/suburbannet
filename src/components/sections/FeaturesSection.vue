@@ -4,22 +4,22 @@ import { Zap, ShieldCheck, GaugeCircle, Handshake } from 'lucide-vue-next'
 
 <template>
   <!-- New Experience Connectivity Section -->
-  <div class="bg-gradient-to-b from-gray-900 via-red-800 to-red-600 py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto text-center mb-16 pt-12">
-      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+  <div class="bg-gradient-to-b from-gray-900 via-red-800 to-red-600 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12 sm:mb-16 pt-8 sm:pt-12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
         Experience Connectivity Without Limits
       </h2>
-      <p class="mt-6 text-xl text-white opacity-90 max-w-2xl mx-auto">
+      <p class="mt-4 sm:mt-6 text-lg sm:text-xl text-white opacity-90 max-w-2xl mx-auto">
         Empower your enterprise with reliable, high-performance connectivity. From SMEs to large organizations, We ensure your business operates at the speed of innovation.
       </p>
     </div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
       <!-- Business Internet Card -->
-      <div class="bg-white rounded-xl shadow-xl p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
+      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
         <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Suburban Business Internet</h3>
-          <p class="text-gray-600 text-base leading-relaxed mb-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Suburban Business Internet</h3>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
             Connect to Suburban's Internet solutions built for businesses and subscription plans designed for value. We offer dedicated, high-capacity fiber optic network and scalable data services.
           </p>
         </div>
@@ -31,10 +31,10 @@ import { Zap, ShieldCheck, GaugeCircle, Handshake } from 'lucide-vue-next'
       </div>
 
       <!-- Business WiFi Card -->
-      <div class="bg-white rounded-xl shadow-xl p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
+      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
         <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Suburban Business WiFi</h3>
-          <p class="text-gray-600 text-base leading-relaxed mb-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Suburban Business WiFi</h3>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
             Suburban's business-grade Wi-Fi is a cost-effective high-speed Wi-Fi solution that is fully managed and secure, using state-of-the-art cloud-based management systems.
           </p>
         </div>
@@ -46,10 +46,10 @@ import { Zap, ShieldCheck, GaugeCircle, Handshake } from 'lucide-vue-next'
       </div>
 
       <!-- Business Voice Card -->
-      <div class="bg-white rounded-xl shadow-xl p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
+      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 flex flex-col justify-between transform transition-all duration-300 hover:-translate-y-2">
         <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Suburban Business Voice</h3>
-          <p class="text-gray-600 text-base leading-relaxed mb-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Suburban Business Voice</h3>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
             Our Business VoIP services enable your business to achieve more with Business Voice utilizing our Hosted PBX and SIP Trunks, ensuring high call quality for both local and international calls.
           </p>
         </div>
@@ -62,39 +62,39 @@ import { Zap, ShieldCheck, GaugeCircle, Handshake } from 'lucide-vue-next'
     </div>
   </div>
 
-  <div class="features-section bg-white py-16 lg:py-20 font-sans">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-      <h2 class="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-10 lg:mb-16">
+  <div class="features-section bg-white py-12 sm:py-16 lg:py-20 font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 mb-8 sm:mb-10 lg:mb-16">
         Why Choose Suburban Fiber?
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
-        <div class="group text-left p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.0s">
-          <div class="h-10 w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-4">
-            <Zap class="h-5 w-5" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div class="group text-left p-4 sm:p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.0s">
+          <div class="h-8 sm:h-10 w-8 sm:w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 sm:mb-4">
+            <Zap class="h-4 sm:h-5 w-4 sm:w-5" />
           </div>
-          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2">Blazing-Fast Internet</h3>
-          <p class="text-gray-600 text-sm">Enjoy true fiber-optic performance with consistent upload and download speeds. Our network infrastructure is built for stability.</p>
+          <h3 class="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">Blazing-Fast Internet</h3>
+          <p class="text-gray-600 text-xs sm:text-sm">Enjoy true fiber-optic performance with consistent upload and download speeds. Our network infrastructure is built for stability.</p>
         </div>
-        <div class="group text-left p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.08s">
-          <div class="h-10 w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-4">
-            <ShieldCheck class="h-5 w-5" />
+        <div class="group text-left p-4 sm:p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.08s">
+          <div class="h-8 sm:h-10 w-8 sm:w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 sm:mb-4">
+            <ShieldCheck class="h-4 sm:h-5 w-4 sm:w-5" />
           </div>
-          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2">Smart Managed Services</h3>
-          <p class="text-gray-600 text-sm">Managed WiFi, VoIP, and Cloud Connectivity to keep your business unified and efficient.</p>
+          <h3 class="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">Smart Managed Services</h3>
+          <p class="text-gray-600 text-xs sm:text-sm">Managed WiFi, VoIP, and Cloud Connectivity to keep your business unified and efficient.</p>
         </div>
-        <div class="group text-left p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.16s">
-          <div class="h-10 w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-4">
-            <GaugeCircle class="h-5 w-5" />
+        <div class="group text-left p-4 sm:p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.16s">
+          <div class="h-8 sm:h-10 w-8 sm:w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 sm:mb-4">
+            <GaugeCircle class="h-4 sm:h-5 w-4 sm:w-5" />
           </div>
-          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2">Unmatched Reliability</h3>
-          <p class="text-gray-600 text-sm">Flexible packages that grow with your bandwidth and operational needs.</p>
+          <h3 class="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">Unmatched Reliability</h3>
+          <p class="text-gray-600 text-xs sm:text-sm">Flexible packages that grow with your bandwidth and operational needs.</p>
         </div>
-        <div class="group text-left p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.24s">
-          <div class="h-10 w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-4">
-            <Handshake class="h-5 w-5" />
+        <div class="group text-left p-4 sm:p-6 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-up" style="animation-delay:0.24s">
+          <div class="h-8 sm:h-10 w-8 sm:w-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 sm:mb-4">
+            <Handshake class="h-4 sm:h-5 w-4 sm:w-5" />
           </div>
-          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2">Transparent Pricing</h3>
-          <p class="text-gray-600 text-sm">No hidden charges, no unexpected fees. Clear, consistent pricing.</p>
+          <h3 class="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2">Transparent Pricing</h3>
+          <p class="text-gray-600 text-xs sm:text-sm">No hidden charges, no unexpected fees. Clear, consistent pricing.</p>
         </div>
       </div>
     </div>
@@ -169,6 +169,11 @@ import { Zap, ShieldCheck, GaugeCircle, Handshake } from 'lucide-vue-next'
 
   .p-8 {
     padding: 1.5rem;
+  }
+
+  .feature-image {
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

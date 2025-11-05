@@ -1,6 +1,16 @@
-# TODO: Update Business WiFi Step 2 Select Button
+# Mobile Responsiveness Fixes
 
-- [x] Change "Select" button to directly continue to step 3 when clicked
-- [x] Remove the "Continue" button from the details panel
-- [x] Remove the bottom "Continue" button
-- [x] Add selectAndContinue function to handle selection and continuation
+## Privacy Policy & Terms of Use Pages
+- [x] Fix content section spacing on mobile to prevent overlapping
+- [x] Improve table responsiveness for mobile devices
+- [x] Adjust layout padding and margins for better mobile experience
+- [x] Ensure proper content flow without horizontal overflow
+
+## Image Responsiveness
+- [x] Check and fix non-responsive images across pages
+- [x] Ensure all images use proper responsive classes
+
+## General Mobile Improvements
+- [ ] Test layout on various mobile breakpoints
+- [ ] Verify content readability on small screens
+- [ ] Ensure navigation works properly on mobile

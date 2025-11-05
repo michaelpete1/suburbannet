@@ -20,13 +20,8 @@ e <template>
         <article
           v-for="plan in plans"
           :key="plan.id"
-          class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative hover:shadow-xl cursor-pointer"
-          @click="selectPlan(plan.id)"
+          class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative hover:shadow-xl"
           :class="selectedPlan === plan.id ? 'ring-2 ring-red-200' : ''"
-          role="button"
-          tabindex="0"
-          @keydown.enter.prevent="selectPlan(plan.id)"
-          @keydown.space.prevent="selectPlan(plan.id)"
         >
           <div class="flex items-start justify-between">
             <div>
@@ -84,20 +79,8 @@ e <template>
           <!-- radio bound to the plan id so label clicks work natively -->
           <input type="radio" :id="plan.id" name="selectedPlan" class="hidden" v-model="selectedPlan" :value="plan.id" />
 
-          <!-- details panel - appears when this plan is selected -->
           <div class="mt-6">
-            <div v-show="openDetailsId === plan.id" class="space-y-4">
-              <p class="text-sm text-gray-600">{{ plan.description }}</p>
-              <div class="flex gap-3">
-                <button type="button" @click.stop="continueWithPlan" class="flex-1 rounded-full bg-red-600 py-3 text-white font-semibold hover:bg-red-700">Continue</button>
-                <button type="button" @click.stop="selectedPlan = '' ; openDetailsId = ''" class="px-4 py-3 rounded-full border">Cancel</button>
-              </div>
-            </div>
-
-            <!-- fallback select button when panel is not open -->
-            <div v-show="openDetailsId !== plan.id">
-              <button type="button" @click.stop="selectAndContinue(plan.id)" :class="['w-full rounded-full py-3 text-white font-semibold transition', selectedPlan === plan.id ? 'bg-red-700' : 'bg-red-600 hover:bg-red-700']">Select</button>
-            </div>
+            <button type="button" @click.stop="selectAndContinue(plan.id)" :class="['w-full rounded-full py-3 text-white font-semibold transition', selectedPlan === plan.id ? 'bg-red-700' : 'bg-red-600 hover:bg-red-700']">Select</button>
           </div>
         </article>
       </div>
@@ -138,15 +121,9 @@ plans.value.forEach(p => {
 })
 
 const selectedPlan = ref('')
-const openDetailsId = ref('')
-
-const selectPlan = (id) => {
-  selectedPlan.value = id
-  openDetailsId.value = id
-}
 
 const selectAndContinue = (id) => {
-  selectPlan(id)
+  selectedPlan.value = id
   continueWithPlan()
 }
 

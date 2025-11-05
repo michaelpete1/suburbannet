@@ -64,7 +64,7 @@ const testimonials = [
 <style scoped>
 .testimonial-card {
   background: var(--bg);
-  padding: 2.5rem;
+  padding: 1.5rem;
   border-radius: 1.5rem;
   height: 100%;
   display: flex;
@@ -74,18 +74,18 @@ const testimonials = [
 }
 
 .testimonial-quote {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 1;
   color: var(--accent);
   font-family: 'Graphik Trial', sans-serif;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .testimonial-text {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #1F2937;
   font-style: italic;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .testimonial-author {

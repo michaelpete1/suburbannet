@@ -15,11 +15,11 @@
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
-              <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-48 object-cover rounded-xl shadow-lg"/>
-              <img src="/logos/CEO.png" alt="Female technician" class="w-full h-48 object-cover rounded-xl shadow-lg"/>
+              <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-32 sm:h-40 md:h-48 object-cover rounded-xl shadow-lg"/>
+              <img src="/logos/CEO.png" alt="Female technician" class="w-full h-32 sm:h-40 md:h-48 object-cover rounded-xl shadow-lg"/>
             </div>
             <div class="space-y-4 mt-8">
-              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl shadow-lg"/>
             </div>
           </div>
         </div>

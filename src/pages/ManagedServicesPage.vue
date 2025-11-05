@@ -59,7 +59,7 @@
       </h3>
       <div class="relative w-full overflow-hidden py-12">
         <div class="flex items-center justify-center space-x-16 animate-scroll">
-          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-14 w-auto object-contain flex-shrink-0 opacity-70 hover:opacity-100 transition duration-300">
+          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-14 w-auto object-contain flex-shrink-0 opacity-70 hover:opacity-100 transition duration-300 max-w-full">
         </div>
       </div>
     </div>

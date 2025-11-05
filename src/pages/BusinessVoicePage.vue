@@ -33,7 +33,7 @@ Scalable, secure, and supported 24/7, Suburban Business Voice empowers your team
 
           <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row gap-6 items-center">
             <div class="w-full sm:w-2/5 flex-shrink-0">
-              <img src="/logos/image 45.png" alt="WiFi network illustration" class="rounded-lg w-full h-auto">
+              <img src="/logos/image 45.png" alt="Voice network illustration" class="rounded-lg w-full h-auto object-cover">
             </div>
             <div class="w-full sm:w-3/5">
               <h3 class="text-xl font-bold text-gray-900 mb-3">Clear, Reliable Communication for Modern Enterprises</h3>
@@ -56,9 +56,9 @@ Scalable, secure, and supported 24/7, Suburban Business Voice empowers your team
           </div>
 
           <div class="mt-8">
-            <h4 class="text-lg font-bold text-gray-900 mb-2">Ready to upgrade your business WiFi?</h4>
+            <h4 class="text-lg font-bold text-gray-900 mb-2">Ready to upgrade your business Voice?</h4>
             <p class="text-gray-600">
-              Contact us today and find the Suburban Business WiFi plan that fits your organization. Our team will guide you through options, installation and ongoing support.
+              Contact us today and find the Suburban Business Voice plan that fits your organization. Our team will guide you through options, installation and ongoing support.
             </p>
           </div>
 

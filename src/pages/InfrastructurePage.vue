@@ -85,7 +85,7 @@
       </h3>
       <div class="overflow-x-auto scrollbar-hide">
         <div class="flex space-x-8 pb-4 animate-scroll">
-          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-12 flex-shrink-0 opacity-70 hover:opacity-100 transition">
+          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-12 w-auto flex-shrink-0 opacity-70 hover:opacity-100 transition object-contain">
         </div>
       </div>
     </div>

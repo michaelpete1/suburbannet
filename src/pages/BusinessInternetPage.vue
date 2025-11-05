@@ -31,7 +31,7 @@
 
           <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row gap-6 items-center">
             <div class="w-full sm:w-2/5 flex-shrink-0">
-              <img src="/logos/two w.png" alt="Partners collaborating" class="rounded-lg w-full h-auto">
+              <img src="/logos/two w.png" alt="Partners collaborating" class="rounded-lg w-full h-auto object-cover">
             </div>
             <div class="w-full sm:w-3/5">
               <h3 class="text-xl font-bold text-gray-900 mb-3">High-Performance Connectivity for Your Enterprise</h3>

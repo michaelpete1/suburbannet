@@ -739,40 +739,76 @@ onBeforeUnmount(() => {
     letter-spacing: 0.25em;
   }
   .content__section {
-    padding-bottom: 2.25rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
   }
   .content__body :deep(th),
   .content__body :deep(td) {
     font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .layout {
+    padding: clamp(2rem, 4vw, 3rem) 1rem clamp(3rem, 6vw, 4rem);
+    gap: clamp(1.5rem, 3vw, 2rem);
   }
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding: clamp(4rem, 10vw, 5rem) 1.25rem clamp(3rem, 8vw, 4rem);
+    padding: clamp(3rem, 8vw, 4rem) 1rem clamp(2rem, 6vw, 3rem);
   }
   .hero__inner {
     padding: 0;
   }
   .hero__card {
     border-radius: 1.5rem;
+    padding: clamp(1.5rem, 6vw, 2.5rem);
   }
   .hero__card-eyebrow {
     font-size: 0.75rem;
     letter-spacing: 0.18em;
   }
   .hero__title {
-    font-size: clamp(1.5rem, 6vw, 2.2rem);
-    line-height: 1.35;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  .hero__subtitle {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    line-height: 1.6;
   }
   .layout {
-    padding: 2.5rem 1.25rem 4rem;
+    padding: 2rem 1rem 3rem;
+    gap: 1.5rem;
+  }
+  .content__section {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.75rem;
   }
   .content__heading {
-    font-size: clamp(1.5rem, 5vw, 1.9rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    margin-bottom: 1rem;
+  }
+  .content__body :deep(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .content__body :deep(ol),
+  .content__body :deep(ul) {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
   }
   .content__body :deep(table) {
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .content__body :deep(table th),
+  .content__body :deep(table td) {
+    padding: 0.5rem;
+    min-width: 80px;
   }
 }
 </style>

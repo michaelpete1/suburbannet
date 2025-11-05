@@ -1,13 +1,13 @@
 <template>
   <section id="request-form" class="request-form-section bg-white font-sans">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-20 grid lg:grid-cols-12 gap-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 md:py-20 grid lg:grid-cols-12 gap-8 sm:gap-12">
       <div class="lg:col-span-7">
-        <div class="mb-10">
+        <div class="mb-8 sm:mb-10">
           <p class="text-red-600 font-semibold mb-2 flex items-center">
-            <span class="rounded-full border-2 border-red-600 w-6 h-6 inline-flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">1</span>
+            <span class="rounded-full border-2 border-red-600 w-5 sm:w-6 h-5 sm:h-6 inline-flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">1</span>
             Step 1 of 3
           </p>
-          <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
             Tell us what you need — <span class="text-red-600">we'll handle the rest.</span>
           </h2>
         </div>
@@ -115,10 +115,10 @@
             </label>
           </fieldset>
 
-          <button type="submit" :disabled="!formData.termsConsent" class="w-full bg-red-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-red-700 transition duration-300 ease-in-out mt-6 disabled:opacity-50 disabled:cursor-not-allowed">
+          <button type="submit" :disabled="!formData.termsConsent" class="w-full bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-red-700 transition duration-300 ease-in-out mt-4 sm:mt-6 disabled:opacity-50 disabled:cursor-not-allowed">
             Request for Connectivity Services
           </button>
-          <p class="text-center text-sm text-gray-500 mt-2">100% secured. No Hidden fees.</p>
+          <p class="text-center text-xs sm:text-sm text-gray-500 mt-2">100% secured. No Hidden fees.</p>
         </form>
       </div>
 
@@ -235,7 +235,7 @@ const formData = ref({
   termsConsent: false,
 })
 
-// Slides data remains the same for the carousel
+// Carousel slides data
 const carouselSlides = ref([
   {
     id: 'connectivity',
