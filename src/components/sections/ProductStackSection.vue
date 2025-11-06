@@ -87,7 +87,7 @@
               <!-- WOMANBLUE image at top -->
               <div class="w-full -mx-2 sm:-mx-4">
                 <div class="aspect-w-16 aspect-h-9 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 relative group">
-                  <img src="/logos/WOMANBLUE.png" alt="Suburban Cloud Meeting" class="w-full h-full object-cover">
+                  <img src="/logos/coo.png" alt="Suburban Cloud Meeting" class="w-full h-full object-cover">
                   <div class="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                     <div class="text-white text-center">
                       <svg class="w-8 h-8 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,11 +160,11 @@
             <!-- Right side - One larger image -->
             <div class="w-1/2 h-full flex-shrink-0">
               <div class="image-container h-full rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 animation-delay-400 relative group">
-                <img src="/logos/WOMANBLUE.png" alt="Suburban Cloud Meeting" class="w-full h-full object-cover">
+                <img src="/logos/coo.png" alt="Suburban Cloud Meeting" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2 sm:pb-4">
                   <div class="text-white text-center">
                     <img src="/icons/connectivity.svg" class="w-6 sm:w-8 h-6 sm:h-8 mx-auto mb-1" />
-                    <p class="text-xs font-medium">Team Collaboration</p>
+                    <p class="text-xs sm:text-sm font-medium">Cloud Infrastructure</p>
                   </div>
                 </div>
               </div>

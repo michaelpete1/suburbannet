@@ -13,17 +13,21 @@
               We are redefining connectivity across Africa, delivering high-speed, low-latency fiber solutions that power homes, businesses, and communities.
             </p>
           </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="grid gap-4">
-              <div class="aspect-[4/3]">
-                <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-full object-cover rounded-xl shadow-lg"/>
-              </div>
-              <div class="aspect-[4/3]">
-                <img src="/logos/CEO.png" alt="Female technician" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+          <div class="grid gap-4">
+            <!-- Top image (coo.png) centered - reduced size -->
+            <div class="flex justify-center">
+              <div class="w-full max-w-xs aspect-[3/2]">
+                <img src="/logos/coo.png" alt="Team meeting" class="w-full h-full object-cover rounded-xl shadow-lg"/>
               </div>
             </div>
-            <div class="aspect-[3/4]">
-              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+            <!-- Bottom two images -->
+            <div class="flex justify-center gap-4">
+              <div class="w-1/2 max-w-xs aspect-[4/3]">
+                <img src="/logos/GROUPCEO.png" alt="Group CEO" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+              </div>
+              <div class="w-1/2 max-w-xs aspect-[4/3]">
+                <img src="/logos/CEO.png" alt="CEO" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+              </div>
             </div>
           </div>
         </div>
@@ -88,12 +92,12 @@
       </section>
 
       <!-- Story Section -->
-      <section class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <div>
-          <span class="text-xs sm:text-sm font-semibold tracking-wider text-red-600 uppercase">Our Story</span>
-          <h2 class="mt-2 text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">Year of formation and existence in Nigeria</h2>
-          <div class="mt-4 sm:mt-6 bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg">
-            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+      <section class="grid md:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12 xl:gap-16 items-center">
+        <div class="w-full max-w-4xl mx-auto px-4 sm:px-6">
+          <span class="text-sm sm:text-base font-semibold tracking-wider text-red-600 uppercase">Our Story</span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Year of formation and existence in Nigeria</h2>
+          <div class="mt-6 sm:mt-8 bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg">
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
               Suburban Fiber Company was incorporated in 2012 and has been in existence in Nigeria for over 20 years.
               Entered the Nigerian telecommunications market providing intelligence, statistical analysis, consultation,
               network. Began providing mobile phone companies with intercity and international transmission facilities,
@@ -101,7 +105,7 @@
             </p>
           </div>
         </div>
-        <div class="relative w-full max-w-xs mx-auto lg:mx-0">
+        <div class="relative w-full max-w-xs mx-auto lg:mx-0 lg:ml-auto">
           <div class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-xl">
             <img
               src="/logos/aircall-reportage-lord-photographe-claire-jaillard-6%201.png"
