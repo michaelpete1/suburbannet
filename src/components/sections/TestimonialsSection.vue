@@ -38,7 +38,7 @@ const testimonials = [
     quote:
       '“Suburban Fiber is more than a service provider — they’re a true partner in our digital journey. Their infrastructure and professionalism reflect world-class standards.”',
     role: 'IT Project Manager',
-    company: 'Caudalie',
+    company: 'Abuja Nigeria',
     accent: '#7C3AED',
     background: 'linear-gradient(135deg, #FFFFFF 0%, #BBD4EC 100%)',
   },
@@ -46,7 +46,7 @@ const testimonials = [
     quote:
       '“Suburban Fiber has been a game-changer for our company. The connection is stable, the speed is consistent, and their customer service is always responsive. It’s the kind of reliability every business needs!”',
     role: 'Operations Manager',
-    company: 'Tech Firm, Lagos',
+    company: 'Tech Firm, Abuja',
     accent: '#2563EB',
     background: 'linear-gradient(135deg, #FFFFFF 0%, #D6E7FC 100%)',
   },

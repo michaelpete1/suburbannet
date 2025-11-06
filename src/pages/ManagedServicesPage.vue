@@ -1,17 +1,16 @@
 <template>
-  <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
+  <div class="font-graphik pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <BackButton class="mb-6" />
+      <BackButton class="mb-4" />
     </div>
 
-    <div class="max-w-6xl mx-auto rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl"
+    <div class="max-w-6xl mx-auto rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl"
          :class="gradientClasses">
-
       <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
         Managed Services
       </h2>
-      <p class="mt-4 text-xl sm:text-2xl max-w-4xl mx-auto font-light leading-relaxed">
-        In today's digital world, managing technology is **strategic—not optional**. Suburban Managed Services provides the expertise, tools, and network to keep your operations secure, reliable, and future-ready.
+      <p class="text-xl sm:text-2xl max-w-4xl mx-auto font-light leading-relaxed">
+        In today's digital world, managing technology is <strong>strategic—not optional</strong>. Suburban Managed Services provides the expertise, tools, and network to keep your operations secure, reliable, and future-ready.
       </p>
     </div>
 
@@ -59,7 +58,7 @@
       </h3>
       <div class="relative w-full overflow-hidden py-12">
         <div class="flex items-center justify-center space-x-16 animate-scroll">
-          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-14 w-auto object-contain flex-shrink-0 opacity-70 hover:opacity-100 transition duration-300 max-w-full">
+          <img v-for="(logo, index) in trackLogos" :key="index" :src="logo.src" :alt="logo.alt" class="h-14 w-auto object-contain flex-shrink-0 opacity-70 hover:opacity-100 transition duration-300 max-w-full">
         </div>
       </div>
     </div>
@@ -83,21 +82,20 @@ const setProduct = (product) => {
 // Define the classes for the hero banner gradient to match the image closely
 const gradientClasses = computed(() => {
   return [
-    'bg-gradient-to-b',
-    'from-red-600', // Strong red start
-    'to-red-400/80', // Slightly lighter, slightly transparent red end
+    'bg-gradient-to-r',
+    'from-red-600',
+    'via-red-500',
+    'to-gray-50/50',
   ];
 });
 
 const logos = [
-  '/logos/cbn.png',
-  '/logos/cisco.png',
-  '/logos/hauwei.png',
-  '/logos/microsoft.png',
-  '/logos/nihq.png',
-  '/logos/npa.png',
-  '/logos/tplink.png',
-  '/logos/tetfund.png'
+  { src: '/logos/cbn.png', alt: 'Central Bank of Nigeria' },
+  { src: '/logos/nhiq.png', alt: 'Nigerian Army' },
+  { src: '/logos/npa.png', alt: 'Nigerian Ports Authority' },
+  { src: '/logos/tetfund.png', alt: 'TETFund' },
+  { src: '/logos/nexim.png', alt: 'NEXIM' },
+  { src: '/logos/israel embassy.png', alt: 'IE' },
 ]
 
 // Duplicate the logos to create a seamless looping track

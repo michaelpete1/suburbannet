@@ -3,7 +3,7 @@
     <div class="hidden lg:flex justify-end items-center gap-6 px-6 lg:px-12 py-2 bg-red-600 text-sm text-white">
       <a href="https://suburbanacademy.ng" target="_blank" rel="noopener" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Suburban Academy</a>
       <a href="https://techosphere.ng/" target="_blank" rel="noopener" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">Techosphere</a>
-      <span class="font-semibold border-l border-white/40 pl-4">0708000044</span>
+      <span class="font-semibold border-l border-white/40 pl-4">+234 908 7005 784</span>
       <a href="#" class="opacity-95 hover:opacity-100 inline-flex items-center gap-1">EN <span class="text-white/80 text-[10px]">▼</span></a>
     </div>
 
@@ -35,7 +35,7 @@
               <RouterLink to="/managed-services" role="menuitem" class="block px-4 py-3 text-sm font-semibold text-white bg-[#D50036] hover:bg-[#B0002B] transition-colors" @click="closeAll">Managed Services</RouterLink>
               <RouterLink to="/business-internet" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Business Internet</RouterLink>
               <RouterLink to="/infrastructure" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Infrastructure</RouterLink>
-              <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Partners Program</RouterLink>
+              <RouterLink to="/contact" role="menuitem" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors" @click="closeAll">Partnership</RouterLink>
             </div>
           </Transition>
         </div>
@@ -91,7 +91,7 @@
             <RouterLink to="/managed-services" class="block px-2 py-2 text-sm rounded bg-[#D50036] text-white hover:bg-[#B0002B]" @click="closeAll">Managed Services</RouterLink>
             <RouterLink to="/business-internet" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Business Internet</RouterLink>
             <RouterLink to="/infrastructure" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Infrastructure</RouterLink>
-            <RouterLink :to="{ path: '/business-internet', hash: '#partners-program' }" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Partners Program</RouterLink>
+            <RouterLink to="/contact" class="block px-2 py-2 text-sm rounded hover:bg-white/10" @click="closeAll">Partnership</RouterLink>
           </div>
 
           <RouterLink :to="{ path: '/', hash: '#request-form' }" class="block px-2 py-3 font-medium rounded-lg hover:bg-white/10" @click="closeAll">Get Fiber</RouterLink>

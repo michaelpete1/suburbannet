@@ -74,7 +74,7 @@ Let Suburban handle the heavy lifting so your network just works. Contact us tod
       </h3>
       <div class="overflow-x-auto scrollbar-hide">
         <div class="flex space-x-8 pb-4 animate-scroll">
-          <img v-for="logo in trackLogos" :key="logo" :src="logo" :alt="`Partner Logo`" class="h-12 flex-shrink-0 opacity-70 hover:opacity-100 transition">
+          <img v-for="(logo, index) in trackLogos" :key="index" :src="logo.src" :alt="logo.alt" class="h-12 flex-shrink-0 opacity-70 hover:opacity-100 transition">
         </div>
       </div>
     </div>
@@ -91,15 +91,12 @@ import { computed } from 'vue'
 import BackButton from '../components/BackButton.vue'
 
 const logos = [
-
-  '/logos/cbn.png',
-  '/logos/cisco.png',
-  '/logos/hauwei.png',
-  '/logos/microsoft.png',
-  '/logos/nihq.png',
-  '/logos/npa.png',
-  '/logos/tplink.png',
-  '/logos/tetfund.png'
+  { src: '/logos/cbn.png', alt: 'Central Bank of Nigeria' },
+  { src: '/logos/nhiq.png', alt: 'Nigerian Army' },
+  { src: '/logos/npa.png', alt: 'Nigerian Ports Authority' },
+  { src: '/logos/tetfund.png', alt: 'TETFund' },
+  { src: '/logos/nexim.png', alt: 'NEXIM' },
+  { src: '/logos/israel embassy.png', alt: 'IE' },
 ]
 
 // Duplicate the logos to create a seamless looping track

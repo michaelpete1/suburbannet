@@ -2,7 +2,7 @@
   <div class="privacy-policy">
     <header class="hero">
       <div class="hero__inner">
-        <div class="hero__card">
+        <div class="hero__card" :class="gradientClasses">
           <p class="hero__card-eyebrow">Privacy Policy</p>
           <h1 class="hero__title">We&apos;re committed to protecting your privacy and ensuring transparency about how we collect, use, and safeguard your personal information.</h1>
         </div>
@@ -56,8 +56,18 @@
 </template>
 
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import Footer from '../components/sections/Footer.vue'
+
+// Define the gradient classes for the header banner
+const gradientClasses = computed(() => {
+  return [
+    'bg-gradient-to-r',
+    'from-red-600',
+    'via-red-500',
+    'to-gray-50/50',
+  ];
+});
 
 const sections = [
   {

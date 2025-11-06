@@ -14,12 +14,16 @@
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div class="space-y-4">
-              <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-32 sm:h-40 md:h-48 object-cover rounded-xl shadow-lg"/>
-              <img src="/logos/CEO.png" alt="Female technician" class="w-full h-32 sm:h-40 md:h-48 object-cover rounded-xl shadow-lg"/>
+            <div class="grid gap-4">
+              <div class="aspect-[4/3]">
+                <img src="/logos/GROUPCEO.png" alt="Training session" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+              </div>
+              <div class="aspect-[4/3]">
+                <img src="/logos/CEO.png" alt="Female technician" class="w-full h-full object-cover rounded-xl shadow-lg"/>
+              </div>
             </div>
-            <div class="space-y-4 mt-8">
-              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl shadow-lg"/>
+            <div class="aspect-[3/4]">
+              <img src="/logos/WOMANBLUE.png" alt="Team meeting" class="w-full h-full object-cover rounded-xl shadow-lg"/>
             </div>
           </div>
         </div>
@@ -97,8 +101,8 @@
             </p>
           </div>
         </div>
-        <div class="relative">
-          <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-xl">
+        <div class="relative w-full max-w-xs mx-auto lg:mx-0">
+          <div class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-xl">
             <img
               src="/logos/aircall-reportage-lord-photographe-claire-jaillard-6%201.png"
               alt="Suburban Fiber Office"
@@ -131,22 +135,28 @@
         <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-center text-gray-900 mb-8 lg:mb-12">We're Committing to This Together</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow">
-            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">🙂</div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Empowering Connectivity for All</h3>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mb-3 lg:mb-4 flex items-center justify-center">
+            <img src="/icons/connectivity.svg" alt="Connectivity" class="w-full h-full object-contain" />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Empowering Connectivity for All</h3>
             <p class="text-sm sm:text-base text-gray-600">
               We are dedicated to making fast, reliable fiber-optic internet accessible across Nigeria not just in cities, but in underserved communities too.
             </p>
           </div>
           <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow">
-            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">⭐</div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Local Excellence & Sovereignty</h3>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mb-3 lg:mb-4 flex items-center justify-center">
+            <img src="/icons/infrastructure-service.svg" alt="Excellence" class="w-full h-full object-contain" />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Local Excellence & Sovereignty</h3>
             <p class="text-sm sm:text-base text-gray-600">
               By keeping our services rooted in Nigeria, we ensure data stays close, performance is high, and our solutions remain responsive to local needs.
             </p>
           </div>
           <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl hover:shadow-xl transition-shadow sm:col-span-2 lg:col-span-1">
-            <div class="text-3xl sm:text-4xl mb-3 lg:mb-4">⚡</div>
-            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Partnership & Trust</h3>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mb-3 lg:mb-4 flex items-center justify-center">
+            <img src="/icons/business-voice 2.svg" alt="Partnership" class="w-full h-full object-contain" />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 lg:mb-3">Partnership & Trust</h3>
             <p class="text-sm sm:text-base text-gray-600">
               We believe that our relationship with you is a partnership, not just a service contract. We promise transparency and continuous improvement.
             </p>
@@ -199,7 +209,7 @@ import Footer from '../components/sections/Footer.vue'
 
 const timeline = [
   { 
-    year: '2012', 
+    year: '2017', 
     highlight: 'Exceeded the voice, data, and video performance benchmarks across our network.' 
   },
   { 

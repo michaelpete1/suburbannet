@@ -25,9 +25,9 @@
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-iaas-red">
+          <RouterLink to="/contact" class="btn-iaas-red">
             Get Started
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -39,9 +39,9 @@
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-iaas-red">
+          <RouterLink to="/contact" class="btn-iaas-red">
             Request Services
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -56,9 +56,9 @@
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-iaas-red">
+          <RouterLink to="/contact" class="btn-iaas-red">
             Request Services
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -70,9 +70,9 @@
           </p>
         </div>
         <div class="mt-auto">
-          <a :href="'#'" class="btn-iaas-red">
+          <RouterLink to="/contact" class="btn-iaas-red">
             Get Connectivity
-          </a>
+          </RouterLink>
         </div>
       </div>
 
@@ -111,14 +111,12 @@ const gradientClasses = computed(() => {
 });
 
 const logos = [
-  '/logos/cbn.png',
-  '/logos/cisco.png',
-  '/logos/hauwei.png',
-  '/logos/microsoft.png',
-  '/logos/nihq.png',
-  '/logos/npa.png',
-  '/logos/tplink.png',
-  '/logos/tetfund.png'
+  { src: '/logos/cbn.png', alt: 'Central Bank of Nigeria' },
+  { src: '/logos/nhiq.png', alt: 'Nigerian Army' },
+  { src: '/logos/npa.png', alt: 'Nigerian Ports Authority' },
+  { src: '/logos/tetfund.png', alt: 'TETFund' },
+  { src: '/logos/nexim.png', alt: 'NEXIM' },
+  { src: '/logos/israel embassy.png', alt: 'IE' },
 ]
 
 // Duplicate the logos to create a seamless looping track

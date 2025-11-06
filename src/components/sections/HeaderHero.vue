@@ -161,11 +161,11 @@ const email = ref('')
 // Logos for the "They Choose Suburban" strip. Place matching files in /public/logos/
 const logos = [
   { src: '/logos/cbn.png', alt: 'Central Bank of Nigeria' },
-  { src: '/logos/nihq.png', alt: 'Nigerian Army Headquarters' },
+  { src: '/logos/nhiq.png', alt: 'Nigerian Army' },
   { src: '/logos/npa.png', alt: 'Nigerian Ports Authority' },
   { src: '/logos/tetfund.png', alt: 'TETFund' },
   { src: '/logos/nexim.png', alt: 'NEXIM' },
-   { src: '/logos/israel embassy.png', alt: 'IE' },
+  { src: '/logos/israel embassy.png', alt: 'IE' },
 ]
 
 // Duplicate the logos to create a seamless looping track

@@ -5,9 +5,9 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <footer class="footer-section bg-gray-900 text-white font-sans">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
-        <div class="col-span-2 md:col-span-1">o
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-700 pb-12">
+        <div>
           <img src="/logos/suburbanlogo2.png" alt="Suburban Logo" class="h-8 mb-4"/>
           <p class="text-gray-400 text-base mb-6">Connecting You to Speed, Reliability, and Support That Never Sleeps</p>
           <p class="text-base font-semibold mb-3">Follow us</p>
@@ -50,9 +50,9 @@ import { RouterLink } from 'vue-router'
           </ul>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center pt-8 text-sm text-gray-500 space-y-4 md:space-y-0">
+      <div class="flex flex-col md:flex-row justify-between items-center pt-10 text-sm text-gray-500 space-y-4 md:space-y-0">
         <p>Copyright Suburban 2025</p>
-        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8">
           <RouterLink to="/privacy-policy" class="hover:text-red-600">Privacy Policy</RouterLink>
           <RouterLink to="/terms-of-use" class="hover:text-red-600">Terms of use</RouterLink>
           <a href="#" class="hover:text-red-600">Security</a>

@@ -23,7 +23,7 @@ const router = createRouter({
     {
       path: '/managed-services',
       name: 'managed-services',
-      component: () => import('../pages/ManagedServicesPage.vue'),
+      component: () => import(/* webpackChunkName: "managed-services" */ '../pages/ManagedServicesPage.vue'),
       meta: { hideNavbar: true }
     },
     {
@@ -57,7 +57,7 @@ const router = createRouter({
     {
       path: '/infrastructure',
       name: 'infrastructure',
-      component: () => import('../pages/InfrastructurePage.vue'),
+      component: () => import(/* webpackChunkName: "infrastructure" */ '../pages/InfrastructurePage.vue'),
       meta: { hideNavbar: true }
     },
     {

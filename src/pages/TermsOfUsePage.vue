@@ -534,7 +534,7 @@ onBeforeUnmount(() => {
   width: 100%;
   max-width: 1200px;
   border-radius: clamp(1.75rem, 3.5vw, 2.5rem);
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+  background: linear-gradient(to right, rgb(220, 38, 38), rgb(239, 68, 68), rgba(249, 250, 251, 0.5));
   box-shadow: 0 32px 64px rgba(220, 38, 38, 0.25), 0 16px 32px rgba(239, 68, 68, 0.15);
   padding: clamp(2rem, 5.5vw, 3.5rem);
   text-align: center;

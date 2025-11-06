@@ -1,24 +1,25 @@
 <template>
   <div class="font-graphik">
-    <!-- Navbar Component -->
-    <Navbar />
-
     <div class="font-graphik py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen flex items-start justify-center">
 
-      <div class="max-w-xl w-full">
+      <div class="max-w-xl lg:max-w-4xl w-full">
 
-        <div class="rounded-t-3xl p-8 sm:p-10 text-center text-white shadow-lg"
-             :class="gradientClasses">
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">
+        <div class="rounded-3xl p-8 sm:p-12 text-center text-white shadow-lg overflow-hidden"
+     :class="gradientClasses">
+    
+    <div class="relative z-10">
+        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
             Contact Us
-          </h2>
-          <p class="mt-2 text-base sm:text-lg max-w-sm mx-auto font-light leading-relaxed">
+        </h2>
+        
+        <p class="mt-3 text-lg sm:text-xl max-w-lg mx-auto font-light leading-relaxed">
             At Suburban, we believe meaningful connections start with a simple conversation. Our team is ready to guide you toward the right solution for your business.
-          </p>
-        </div>
+        </p>
+    </div>
+</div>
 
         <form @submit.prevent="submitForm" class="bg-white rounded-b-3xl p-8 sm:p-10 shadow-xl border-t border-red-100">
-
+          
           <div class="mb-6">
             <label for="email" class="form-label">Enter Email</label>
             <input
@@ -31,7 +32,6 @@
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mb-6">
-
             <div>
               <label for="firstName" class="form-label">First name</label>
             <input type="text" id="firstName" v-model="formData.firstName" class="form-input" placeholder="First name">
@@ -53,8 +53,7 @@
             </div>
           </div>
 
-          <div class="mb-6">
-            <label for="service" class="form-label">Select Service</label>
+          <div class="mb-6 relative"> <label for="service" class="form-label">Select Service</label>
             <select id="service" v-model="formData.selectedService" class="form-input appearance-none">
               <option disabled value="">Select a service</option>
               <option>Managed Service</option>
@@ -69,8 +68,7 @@
             </span>
           </div>
 
-          <div class="mb-6">
-            <label for="enquiry" class="form-label">Select Enquiry</label>
+          <div class="mb-6 relative"> <label for="enquiry" class="form-label">Select Enquiry</label>
             <select id="enquiry" v-model="formData.selectedEnquiry" class="form-input appearance-none">
               <option disabled value="">Select an enquiry</option>
               <option v-for="enquiry in enquiries" :key="enquiry" :value="enquiry">{{ enquiry }}</option>
@@ -99,20 +97,18 @@
       </div>
     </div>
 
-    <!-- Footer Component -->
     <Footer />
   </div>
 </template>
 
 <script setup>
 import { reactive, computed } from 'vue'
-import Navbar from '../components/sections/Navbar.vue'
 import Footer from '../components/sections/Footer.vue'
 
 // Define the enquiries options
 const enquiries = [
   'Infrastructure as a Service (IaaS)',
-  'Partners Program',
+  'Partnership',
   'Managed Service',
   'Careers',
   'Technical Support'
@@ -130,12 +126,13 @@ const formData = reactive({
   request: ''
 });
 
-// Define the gradient classes for the header banner
+// ⭐ CHANGE HERE: Using 'to-white' or 'to-gray-50' to mimic the fade to background.
 const gradientClasses = computed(() => {
   return [
-    'bg-gradient-to-b',
+    'bg-gradient-to-r', // Changed from 'to-b' to 'to-r' to match the horizontal fade in the image
     'from-red-600',
-    'to-red-400/80',
+    'via-red-500',
+    'to-gray-50/50', // Fades to a transparent version of the background color
   ];
 });
 
@@ -162,11 +159,6 @@ const submitForm = () => {
   @apply block w-full py-3 px-4 text-gray-900 bg-gray-50 border border-gray-200 rounded-lg
          placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500
          transition duration-150 ease-in-out;
-}
-
-/* Styling for the Service Select wrapper (to position the custom arrow) */
-#service {
-  position: relative;
 }
 
 /* Submit Button Style */
